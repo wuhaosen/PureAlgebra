@@ -1,0 +1,146 @@
+\documentclass[11pt,leqno]{article}
+\usepackage{amsmath, amscd, amsthm, amssymb, graphics, xypic, mathrsfs,setspace,fancyhdr,times}
+\usepackage[pagebackref=true]{hyperref}
+\hypersetup{backref}
+
+\setlength{\textwidth}{6.0in}             % Alter margins
+\setlength{\textheight}{8.25in}
+\setlength{\topmargin}{-0.125in}
+\setlength{\oddsidemargin}{0.25in}
+\setlength{\evensidemargin}{0.25in}
+
+%\include{commands}
+
+\newcommand{\setof}[1]{\{ #1 \}}
+\newcommand{\tensor}{\otimes}
+\newcommand{\colim}{\operatorname{colim}}
+\newcommand{\Spec}{\operatorname{Spec}}
+\newcommand{\isomto}{{\stackrel{\sim}{\;\longrightarrow\;}}}
+\newcommand{\isomt}{{\stackrel{{\scriptscriptstyle{\sim}}}{\;\rightarrow\;}}}
+\newcommand{\smallsim}{{\scriptscriptstyle{\sim}}}
+
+\renewcommand{\O}{{\mathcal O}}
+\renewcommand{\hom}{\operatorname{Hom}}
+\newcommand{\Xa}{{\mathcal{X}_{\underline{a}}}}
+\newcommand{\real}{{\mathbb R}}
+\newcommand{\cplx}{{\mathbb C}}
+\newcommand{\Q}{{\mathbb Q}}
+\newcommand{\Z}{{\mathbb Z}}
+\newcommand{\aone}{{\mathbb A}^1}
+\newcommand{\pone}{{\mathbb P}^1}
+\newcommand{\Stilde}{{\tilde{{\mathcal S}}}}
+
+\newcommand{\ga}{{{\mathbb G}_{a}}}
+\newcommand{\gm}{{{\mathbb G}_{m}}}
+\newcommand{\et}{\text{\'et}}
+\newcommand{\ho}[1]{{\mathcal H}({#1})}
+\newcommand{\hop}[1]{{\mathcal H}_{\bullet}({#1})}
+\newcommand{\dmeff}{{\mathbf{DM}}^{eff}_{k,-}}
+\newcommand{\CH}{{\widetilde{CH}}}
+\renewcommand{\deg}{\operatorname{deg}}
+\newcommand{\tdeg}{\widetilde{\deg}}
+\newcommand{\Op}{\operatorname{Op}}
+
+\newcommand{\Shv}{{\mathcal Shv}}
+\newcommand{\Sm}{{\mathcal Sm}}
+\newcommand{\Cor}{{\mathcal Cor}}
+\newcommand{\Spc}{{\mathcal Spc}}
+\newcommand{\Mod}{{\mathcal Mod}}
+\newcommand{\Ab}{{\mathcal Ab}}
+\newcommand{\K}{{{\mathbf K}}}
+\renewcommand{\H}{{{\mathbf H}}}
+\newcommand{\Alg}{{\mathbf{Alg}}}
+\newcommand{\sym}{{\operatorname{Sym}}}
+\newcommand{\<}[1]{{\langle}#1 {\rangle}}
+\newcommand{\simpspc}{\Delta^{\circ}\Spc}
+\newcommand{\limdir}{\underrightarrow {\operatorname{\mathstrut lim}}}
+\newcommand{\hsnis}{{\mathcal H}_s((\Sm_k)_{Nis})}
+\newcommand{\hspnis}{{\mathcal H}_{s,\bullet}^{Nis}(k)}
+\newcommand{\hspet}{{\mathcal H}_{s,\bullet}^{\et}(k)}
+\newcommand{\hsptau}{{\mathcal H}_{s,\bullet}^{\tau}(k)}
+\newcommand{\hset}{{\mathcal H}_s^{\et}(k)}
+\newcommand{\hstau}{{\mathcal H}_s^{\tau}(k)}
+\newcommand{\het}[1]{{\mathcal H}^{\et}(#1)}
+\newcommand{\hpet}[1]{{\mathcal H}^{\et}_{\bullet}(#1)}
+\newcommand{\dkset}{{\mathfrak D}_k-{\mathcal Set}}
+\newcommand{\F}{{\mathcal F}}
+\newcommand{\fkset}{{\mathcal F}_k-{\mathcal Set}}
+\newcommand{\fkrset}{{\mathcal F}_k^r-{\mathcal Set}}
+
+\newcommand{\simpnis}{{\Delta}^{\circ}\Shv_{Nis}({\mathcal Sm}_k)}
+\newcommand{\simpmod}{{\Delta}^{\circ}\Mod}
+\newcommand{\simpet}{{\Delta}^{\circ}\Shv_{\text{\'et}}({\mathcal Sm}_k)}
+\newcommand{\simptau}{{\Delta}^{\circ}\Shv_{\tau}({\mathcal Sm}_k)}
+
+\newcommand{\comment}[1]{\marginpar{\begin{tiny}{#1}\end{tiny}}}
+
+\newcommand{\kbar}{{\overline{k}}}
+
+\newcounter{intro}
+\setcounter{intro}{1}
+
+%\renewcommand{\baselinestretch}{1.5}
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}[subsection]
+\newtheorem{scholium}[thm]{Scholium}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{claim}[thm]{Claim}
+\newtheorem{question}[thm]{Question}
+\newtheorem{problem}[thm]{Problem}
+\newtheorem{answer}[thm]{Answer}
+\newtheorem{conj}[thm]{Conjecture}
+\newtheorem*{thm*}{Theorem}
+\newtheorem*{problem*}{Problem}
+\newtheorem*{answer*}{Answer}
+
+\newtheorem{thmintro}{Theorem}
+\newtheorem{propintro}[thmintro]{Proposition}
+\newtheorem{problemintro}[thmintro]{Problem}
+\newtheorem{defnintro}[thmintro]{Definition}
+\newtheorem{scholiumintro}[thmintro]{Scholium}
+\newtheorem{lemintro}[thmintro]{Lemma}
+
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{Definition}
+\newtheorem{construction}[thm]{Construction}
+\newtheorem{notation}[thm]{Notation}
+
+\theoremstyle{remark}
+\newtheorem{rem}[thm]{Remark}
+\newtheorem{remintro}[thmintro]{Remark}
+\newtheorem{extension}[thm]{Extension}
+\newtheorem{ex}[thm]{Example}
+\newtheorem{entry}[thm]{}
+
+\numberwithin{equation}{section}
+
+\begin{document}
+\pagestyle{fancy}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+\fancyhead{}
+\fancyhead[LO,R]{\bfseries\footnotesize\thepage}
+\fancyhead[LE]{\bfseries\footnotesize\rightmark}
+\fancyhead[RO]{\bfseries\footnotesize\rightmark}
+\chead[]{}
+\cfoot[]{}
+\setlength{\headheight}{1cm}
+
+
+\author{Haosen Wu}
+\title{{\bf 510a Homework 1 Tempted Solutions}}
+\date{08/30/18}
+
+ Second we take $b=e_\otimes, c=e_\circ$, \textrm{thus} $a\circ (e_\circ \otimes d) = a\otimes (e_\otimes \circ d)$. Now take $d=e_\circ $ we have $a\circ (e_\circ \otimes e_\circ)=a$ for any $a$, we get $e_\circ \otimes e_\circ=e_\circ$; take $d=e_\otimes $ we have $a\otimes (e_\otimes \circ e_\otimes)=a$ for any $a$, we get $e_\otimes \circ e_\otimes=e_\otimes$. Combine with the first observation 
+
+
+$G\times G\times G & \stackrel{id\times m}{\to} & G\times G\\
+ m\times id\downarrow & & \downarrow m \\
+ G\times G &  \stackrel{m}{\to}  & G $
+ $x_i\neq x_j$ we have different image $1/p^i\neq 1/p^j$.
+ 
+ is a finite extension, then primitive element theorem asserts that $\F_{p^n}=\F_{p}(\alpha)$...Pick $\alpha=y^p$ then $(y^p)^n-y=0$ is the minimal polynomial, the degree of $min(\F_p,\alpha)$ as for simple extension is $n$ precisely. 
+
+
+\end{document}

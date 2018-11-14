@@ -1,0 +1,183 @@
+\documentclass[11pt,leqno]{article}
+\usepackage{amsmath, amscd, amsthm, amssymb, graphics, xypic, mathrsfs,setspace,fancyhdr,times}
+\usepackage[pagebackref=true]{hyperref}
+\hypersetup{backref}
+
+\setlength{\textwidth}{6.0in}             % Alter margins
+\setlength{\textheight}{8.25in}
+\setlength{\topmargin}{-0.125in}
+\setlength{\oddsidemargin}{0.25in}
+\setlength{\evensidemargin}{0.25in}
+
+%\include{commands}
+
+\newcommand{\setof}[1]{\{ #1 \}}
+\newcommand{\tensor}{\otimes}
+\newcommand{\colim}{\operatorname{colim}}
+\newcommand{\Spec}{\operatorname{Spec}}
+\newcommand{\isomto}{{\stackrel{\sim}{\;\longrightarrow\;}}}
+\newcommand{\isomt}{{\stackrel{{\scriptscriptstyle{\sim}}}{\;\rightarrow\;}}}
+\newcommand{\smallsim}{{\scriptscriptstyle{\sim}}}
+
+\renewcommand{\O}{{\mathcal O}}
+\renewcommand{\hom}{\operatorname{Hom}}
+\newcommand{\Xa}{{\mathcal{X}_{\underline{a}}}}
+\newcommand{\real}{{\mathbb R}}
+\newcommand{\cplx}{{\mathbb C}}
+\newcommand{\Q}{{\mathbb Q}}
+\newcommand{\Z}{{\mathbb Z}}
+\newcommand{\aone}{{\mathbb A}^1}
+\newcommand{\pone}{{\mathbb P}^1}
+\newcommand{\Stilde}{{\tilde{{\mathcal S}}}}
+
+\newcommand{\ga}{{{\mathbb G}_{a}}}
+\newcommand{\gm}{{{\mathbb G}_{m}}}
+\newcommand{\et}{\text{\'et}}
+\newcommand{\ho}[1]{{\mathcal H}({#1})}
+\newcommand{\hop}[1]{{\mathcal H}_{\bullet}({#1})}
+\newcommand{\dmeff}{{\mathbf{DM}}^{eff}_{k,-}}
+\newcommand{\CH}{{\widetilde{CH}}}
+\renewcommand{\deg}{\operatorname{deg}}
+\newcommand{\tdeg}{\widetilde{\deg}}
+\newcommand{\Op}{\operatorname{Op}}
+
+\newcommand{\Shv}{{\mathcal Shv}}
+\newcommand{\Sm}{{\mathcal Sm}}
+\newcommand{\Cor}{{\mathcal Cor}}
+\newcommand{\Spc}{{\mathcal Spc}}
+\newcommand{\Mod}{{\mathcal Mod}}
+\newcommand{\Ab}{{\mathcal Ab}}
+\newcommand{\K}{{{\mathbf K}}}
+\renewcommand{\H}{{{\mathbf H}}}
+\newcommand{\Alg}{{\mathbf{Alg}}}
+\newcommand{\sym}{{\operatorname{Sym}}}
+\newcommand{\<}[1]{{\langle}#1 {\rangle}}
+\newcommand{\simpspc}{\Delta^{\circ}\Spc}
+\newcommand{\limdir}{\underrightarrow {\operatorname{\mathstrut lim}}}
+\newcommand{\hsnis}{{\mathcal H}_s((\Sm_k)_{Nis})}
+\newcommand{\hspnis}{{\mathcal H}_{s,\bullet}^{Nis}(k)}
+\newcommand{\hspet}{{\mathcal H}_{s,\bullet}^{\et}(k)}
+\newcommand{\hsptau}{{\mathcal H}_{s,\bullet}^{\tau}(k)}
+\newcommand{\hset}{{\mathcal H}_s^{\et}(k)}
+\newcommand{\hstau}{{\mathcal H}_s^{\tau}(k)}
+\newcommand{\het}[1]{{\mathcal H}^{\et}(#1)}
+\newcommand{\hpet}[1]{{\mathcal H}^{\et}_{\bullet}(#1)}
+\newcommand{\dkset}{{\mathfrak D}_k-{\mathcal Set}}
+\newcommand{\F}{{\mathcal F}}
+\newcommand{\fkset}{{\mathcal F}_k-{\mathcal Set}}
+\newcommand{\fkrset}{{\mathcal F}_k^r-{\mathcal Set}}
+
+\newcommand{\simpnis}{{\Delta}^{\circ}\Shv_{Nis}({\mathcal Sm}_k)}
+\newcommand{\simpmod}{{\Delta}^{\circ}\Mod}
+\newcommand{\simpet}{{\Delta}^{\circ}\Shv_{\text{\'et}}({\mathcal Sm}_k)}
+\newcommand{\simptau}{{\Delta}^{\circ}\Shv_{\tau}({\mathcal Sm}_k)}
+
+\newcommand{\comment}[1]{\marginpar{\begin{tiny}{#1}\end{tiny}}}
+
+\newcommand{\kbar}{{\overline{k}}}
+
+\newcounter{intro}
+\setcounter{intro}{1}
+
+%\renewcommand{\baselinestretch}{1.5}
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}[subsection]
+\newtheorem{scholium}[thm]{Scholium}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{claim}[thm]{Claim}
+\newtheorem{question}[thm]{Question}
+\newtheorem{problem}[thm]{Problem}
+\newtheorem{answer}[thm]{Answer}
+\newtheorem{conj}[thm]{Conjecture}
+\newtheorem*{thm*}{Theorem}
+\newtheorem*{problem*}{Problem}
+\newtheorem{answer}[thm]{Answer}
+\newtheorem*{answer*}{Answer}
+
+\newtheorem{thmintro}{Theorem}
+\newtheorem{propintro}[thmintro]{Proposition}
+\newtheorem{problemintro}[thmintro]{Problem}
+\newtheorem{defnintro}[thmintro]{Definition}
+\newtheorem{scholiumintro}[thmintro]{Scholium}
+\newtheorem{lemintro}[thmintro]{Lemma}
+
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{Definition}
+\newtheorem{construction}[thm]{Construction}
+\newtheorem{notation}[thm]{Notation}
+
+\theoremstyle{remark}
+\newtheorem{rem}[thm]{Remark}
+\newtheorem{remintro}[thmintro]{Remark}
+\newtheorem{extension}[thm]{Extension}
+\newtheorem{ex}[thm]{Example}
+\newtheorem{entry}[thm]{}
+
+\numberwithin{equation}{section}
+
+\begin{document}
+\pagestyle{fancy}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+\fancyhead{}
+\fancyhead[LO,R]{\bfseries\footnotesize\thepage}
+\fancyhead[LE]{\bfseries\footnotesize\rightmark}
+\fancyhead[RO]{\bfseries\footnotesize\rightmark}
+\chead[]{}
+\cfoot[]{}
+\setlength{\headheight}{1cm}
+
+\author{}
+\title{{\bf 510A HW3}}
+\date{}
+\maketitle
+%\addtocounter{section}{1}
+\begin{enumerate}
+\item In this exercise, we will show that $PSL_2({\mathbb F}_5)$ is isomorphic to $A_5$.
+\begin{itemize}
+\item By the Sylow theorems, $SL_2({\mathbb F}_5)$ contains a group of order $2^3$.  A {\em monomial invertible matrix} is an invertible matrix that has exactly one non-zero entry in each row and column.  Prove that the subgroup $M$ of monomial invertible matrices is a Sylow $2$-subgroup and that it is isomorphic to the Quaternion group of order $8$.
+\item Show that the normalizer $N$ of the $2$-Sylow subgroup $M$ is a group of order $3 \cdot 2^3$.  Hence, $N$ has index $5$ in $SL_2({\mathbb F}_5)$.  Conclude that $SL_2({\mathbb F}_5)$ acts on $G/N$ and thus determines a homomorphism $SL_2({\mathbb F}_5) \to S_5$.
+\item Prove that the image of the homomorphism you constructed in the previous part has order $60$; equivalently that the kernel of the homomorphism is precisely $\pm Id_2$ and conclude that $PSL_2({\mathbb F}_5)$ is isomorphic to $A_5$.
+\end{itemize}
+\item Using the fact that $SL_2({\mathbb F}_4)$ acts on ${\mathbb P}^1({\mathbb F}_4)$, construct an isomorphism $PSL_2({\mathbb F}_4) \cong A_5$.
+\item Show that $\Z/p^2$ can be realized as a central extension of $\Z/p$ by $\Z/p$ (write down the corresponding factor set).  Can it be realized as a semi-direct product?
+\item Prove that $Aut(\Z/p^2) \cong {\Z/p^2}^{\times}$, i.e., the set of non-zero elements of $\Z/p^2$ viewed as a group under multiplication is cyclic of order $p(p-1)$.
+\item Prove that $Aut(\Z/p \times \Z/p) \cong GL_2(\Z/p)$.
+\item Classify groups of order $p^2 q$ with $p$ and $q$ prime $p > q$.
+\begin{itemize}
+\item[i)] Show that if $q$ does not divide $p^2 - 1$, then there are exactly two non-isomorphic such groups (both are abelian).
+\item[ii)] Show that if $q$ divides $p^2 - 1$, then there is, up to isomorphism, at most $1$ non-abelian group of order $p^2q$ with Sylow $p$-subgroup cyclic of order $p^2$.
+\item[iii)] Show that if $q$ divides $p^2 - 1$, then there is a bijection between isomorphism classes of non-abelian groups of order $p^2q$ with Sylow $p$-subgroup $\Z/p \times \Z/p$ and conjugacy classes of subgroups of order $q$ in $GL_2(\Z/p)$.
+\item[iv)] Classify groups of order $18$ explicitly.
+\begin{answer}
+
+\end{answer}
+
+\end{itemize}
+\item Classify groups of order $12$ (this is of the form $p^2 q$ with $p < q$).
+\item Classify groups of order $p^3$, where $p$ is a prime.  Show that, up to isomorphism, there are $5$ such groups: the abelian groups $\Z/p^{\times 3}, \Z/p^2 \times \Z/p$ or $\Z/p^3$, or the non-abelian groups of order $p^3$ constructed in the notes as either central extensions of groups of order $p^2$ by $\Z/p$.
+
+\item Show that if $G$ is a group of order $p^n$, then any subgroup of order $p^{n-1}$ is normal.
+\begin{answer*}
+Consider that $G$ is a nilpotent group and thus subgroup of order $p^{n-1}$ (Name with $P$) is proper subgroup of $N_G(P)$, then $N_G(P)$ has to be $G$ since we have no other factor than $p$. 
+\end{answer*}
+
+\item Prove that if $E/F$ is finite of degree $[E:F]$ and $L/E$ is finite of degree $[L:E]$, then $L/F$ is finite of degree $[L:E][E:F]$.
+\item If $F$ is a field, a {\em derivation of $F$} is a function $\delta: F \to F$ such that $\delta$ is additive, i.e., $\delta(a + b) = \delta(a) + \delta(b)$ and $\delta$ satisfies the Leibniz rule $\delta(ab) = a \delta(b) + b\delta(a)$.  A {\em differential field} is a pair $(F,\delta)$ consisting of a field and a derivation $\delta: F \to F$.
+    \begin{itemize}
+    \item[i)] If $(F,\delta)$ is a differential field, show that $\ker(\delta) := \{ a \in F | \delta(a) = 0 \}$ is a subfield of $F$; this field is usually called the field of constants.
+    \item[ii)] If $(F,\delta)$ is a differential field where $F$ has characteristic $0$, and if $E$ is an algebraic extension of $F$, then $\delta$ extends uniquely to a derivation on $E$. (Hint: show that the ``power rule" from calculus holds, and think about the minimal polynomial of elements of $u \in E$.)
+    \end{itemize}
+\item We continue with some ideas of the previous problem.  If $(F,\delta)$ and $(E,\delta')$ are differential fields, a differential homomorphism $\varphi: (F,\delta) \to (E,\delta')$ is a homomorphism $\varphi: F \to E$ such that $\varphi(\delta(a)) = \delta'(\varphi(a))$.  Note that, in this case, $\varphi$ is automatically injective.  A differential extension $(E,\delta')/(F,\delta)$ is a field extension $E/F$ such that $\delta'|_F = \delta$.  If  $(E,\delta')/(F,\delta)$ is a differential extension, a differential homomorphism $\varphi: E \to E$ such that $\varphi|_F = id_F$ is called a differential automorphism of $(E,\delta')$ fixing $(F,\delta)$.
+    \begin{itemize}
+    \item[i)]Show that the set of differential automorphisms of $(E,\delta')$ fixing $(F,\delta)$ is a group.
+    \item[ii)] Suppose $(F,\delta)$ is a differential field, where $F$ has characteristic $0$ and suppose $(E,\delta')$ is a differential extension of $(F,\delta)$.  Suppose $u$ be an element of $E$ with $\delta'(u) = a \in F$, and assume that $\delta(v) = a$ admits no solution in $F$ (i.e., $a$ is not a derivative in $F$).  Show that the element $u$ is transcendental over $F$.  Hint: first show that the power rule holds, i.e., $\delta(u^i) = iu^{i-1} \delta'(u)$ for $u \in E$.  Then, suppose $u$ is algebraic over $F$ and derive a contradiction.
+    \item[iii)] Write $(F\langle u \rangle,\delta')$ for the smallest differential subfield of $(E,\delta)$ that contains $u$.  Show that the field of constants of $(F \langle u \rangle,\delta)$ coincides with that of $(F,\delta)$.
+    \item[iv)] Show that any differential automorphism of $F \langle u \rangle$ over $F$ is of the form $u \mapsto u + c$, where $c$ is a constant in $(F,\delta)$ (hint: where must $\delta'$ send $u$?).
+    \item[iv)] Show that, given any $c$ in the field of constants of $(F \langle u \rangle,\delta)$, the mapping $u \mapsto u+c$ induces a differential automorphism of $F \langle u \rangle$ over $F$.  Conclude that the group of differential automorphisms of $(F\langle u \rangle,\delta')$ over $(F,\delta)$ is isomorphic to the additive group of the field of constants.
+    \end{itemize}
+\end{enumerate}
+
+
+\end{document}

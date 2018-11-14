@@ -1,0 +1,287 @@
+\documentclass[11pt,leqno]{article}
+\usepackage{amsmath, amscd, amsthm, amssymb, graphics, xypic, mathrsfs,setspace,fancyhdr,times,enumitem}
+\usepackage[pagebackref=true]{hyperref}
+\hypersetup{backref}
+
+\setlength{\textwidth}{6.0in}             % Alter margins
+\setlength{\textheight}{8.25in}
+\setlength{\topmargin}{-0.125in}
+\setlength{\oddsidemargin}{0.25in}
+\setlength{\evensidemargin}{0.25in}
+
+%\include{commands}
+
+\newcommand{\setof}[1]{\{ #1 \}}
+\newcommand{\tensor}{\otimes}
+\newcommand{\colim}{\operatorname{colim}}
+\newcommand{\Spec}{\operatorname{Spec}}
+\newcommand{\isomto}{{\stackrel{\sim}{\;\longrightarrow\;}}}
+\newcommand{\isomt}{{\stackrel{{\scriptscriptstyle{\sim}}}{\;\rightarrow\;}}}
+\newcommand{\smallsim}{{\scriptscriptstyle{\sim}}}
+
+\renewcommand{\O}{{\mathcal O}}
+\renewcommand{\hom}{\operatorname{Hom}}
+\newcommand{\Xa}{{\mathcal{X}_{\underline{a}}}}
+\newcommand{\real}{{\mathbb R}}
+\newcommand{\cplx}{{\mathbb C}}
+\newcommand{\Q}{{\mathbb Q}}
+\newcommand{\Z}{{\mathbb Z}}
+\newcommand{\R}{{\mathbb R}}
+\newcommand{\aone}{{\mathbb A}^1}
+\newcommand{\pone}{{\mathbb P}^1}
+\newcommand{\Stilde}{{\tilde{{\mathcal S}}}}
+
+\newcommand{\ga}{{{\mathbb G}_{a}}}
+\newcommand{\gm}{{{\mathbb G}_{m}}}
+\newcommand{\et}{\text{\'et}}
+\newcommand{\ho}[1]{{\mathcal H}({#1})}
+\newcommand{\hop}[1]{{\mathcal H}_{\bullet}({#1})}
+\newcommand{\dmeff}{{\mathbf{DM}}^{eff}_{k,-}}
+\newcommand{\CH}{{\widetilde{CH}}}
+\renewcommand{\deg}{\operatorname{deg}}
+\newcommand{\tdeg}{\widetilde{\deg}}
+\newcommand{\Op}{\operatorname{Op}}
+
+\newcommand{\Shv}{{\mathcal Shv}}
+\newcommand{\Sm}{{\mathcal Sm}}
+\newcommand{\Cor}{{\mathcal Cor}}
+\newcommand{\Spc}{{\mathcal Spc}}
+\newcommand{\Mod}{{\mathcal Mod}}
+\newcommand{\Ab}{{\mathcal Ab}}
+\newcommand{\K}{{{\mathbf K}}}
+\renewcommand{\H}{{{\mathbf H}}}
+\newcommand{\Alg}{{\mathbf{Alg}}}
+\newcommand{\sym}{{\operatorname{Sym}}}
+\newcommand{\<}[1]{{\langle}#1 {\rangle}}
+\newcommand{\simpspc}{\Delta^{\circ}\Spc}
+\newcommand{\limdir}{\underrightarrow {\operatorname{\mathstrut lim}}}
+\newcommand{\hsnis}{{\mathcal H}_s((\Sm_k)_{Nis})}
+\newcommand{\hspnis}{{\mathcal H}_{s,\bullet}^{Nis}(k)}
+\newcommand{\hspet}{{\mathcal H}_{s,\bullet}^{\et}(k)}
+\newcommand{\hsptau}{{\mathcal H}_{s,\bullet}^{\tau}(k)}
+\newcommand{\hset}{{\mathcal H}_s^{\et}(k)}
+\newcommand{\hstau}{{\mathcal H}_s^{\tau}(k)}
+\newcommand{\het}[1]{{\mathcal H}^{\et}(#1)}
+\newcommand{\hpet}[1]{{\mathcal H}^{\et}_{\bullet}(#1)}
+\newcommand{\dkset}{{\mathfrak D}_k-{\mathcal Set}}
+\newcommand{\F}{{\mathcal F}}
+\newcommand{\fkset}{{\mathcal F}_k-{\mathcal Set}}
+\newcommand{\fkrset}{{\mathcal F}_k^r-{\mathcal Set}}
+
+\newcommand{\simpnis}{{\Delta}^{\circ}\Shv_{Nis}({\mathcal Sm}_k)}
+\newcommand{\simpmod}{{\Delta}^{\circ}\Mod}
+\newcommand{\simpet}{{\Delta}^{\circ}\Shv_{\text{\'et}}({\mathcal Sm}_k)}
+\newcommand{\simptau}{{\Delta}^{\circ}\Shv_{\tau}({\mathcal Sm}_k)}
+
+\newcommand{\comment}[1]{\marginpar{\begin{tiny}{#1}\end{tiny}}}
+
+\newcommand{\kbar}{{\overline{k}}}
+
+\newcounter{intro}
+\setcounter{intro}{1}
+
+%\renewcommand{\baselinestretch}{1.5}
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}[subsection]
+\newtheorem{scholium}[thm]{Scholium}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{claim}[thm]{Claim}
+\newtheorem{question}[thm]{Question}
+\newtheorem{problem}[thm]{Problem}
+\newtheorem{answer}[thm]{Answer}
+\newtheorem{conj}[thm]{Conjecture}
+\newtheorem*{thm*}{Theorem}
+\newtheorem*{problem*}{Problem}
+\newtheorem*{answer*}{Answer}
+
+\newtheorem{thmintro}{Theorem}
+\newtheorem{propintro}[thmintro]{Proposition}
+\newtheorem{problemintro}[thmintro]{Problem}
+\newtheorem{defnintro}[thmintro]{Definition}
+\newtheorem{scholiumintro}[thmintro]{Scholium}
+\newtheorem{lemintro}[thmintro]{Lemma}
+
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{Definition}
+\newtheorem{construction}[thm]{Construction}
+\newtheorem{notation}[thm]{Notation}
+
+\theoremstyle{remark}
+\newtheorem{rem}[thm]{Remark}
+\newtheorem{remintro}[thmintro]{Remark}
+\newtheorem{extension}[thm]{Extension}
+\newtheorem{ex}[thm]{Example}
+\newtheorem{entry}[thm]{}
+
+\numberwithin{equation}{section}
+
+\begin{document}
+\pagestyle{fancy}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+\fancyhead{}
+\fancyhead[LO,R]{\bfseries\footnotesize\thepage}
+\fancyhead[LE]{\bfseries\footnotesize\rightmark}
+\fancyhead[RO]{\bfseries\footnotesize\rightmark}
+\chead[]{}
+\cfoot[]{}
+\setlength{\headheight}{1cm}
+
+\author{}
+\title{{\bf 510A HW2 Tempted Solutions}}
+\date{09/21/18}
+\author{Haosen Wu}
+
+\maketitle
+%\addtocounter{section}{1}
+\begin{enumerate}
+
+\item Prove that if $F$ is a finitely generated free abelian group, and $H \subset F$ is a subgroup, then $H$ is necessarily a finitely generated free abelian group as well.
+    \begin{answer*}
+     We recognize  $F=\bigoplus_n\Z=\Z^n$,  likewise if the subgroup $H \subset F$ can just be identified as subspace of $\Z^n$. Like $R^n$, we know the ($m$-dimensional) subspaces of $\Z^n$ are all isomorphic to $Z^m$ for some $m\leq n$. Then $H=\Z^m$ is again a finitely generated free $\Z$-module. 
+     
+     Formally, we proceed induction on $n$. We write $F=\Z\langle x_1\rangle \oplus \dots \oplus Z\langle x_n\rangle$, let map $f:\sum_n{c_ix_i}=c_1x_1$, $c_i\in \Z$. Find $H_1=Ker(f|H)\in \langle x_2,\dots,x_n\rangle$, our $H_1$ is free abelian(hypothetically) and has $n-1$ (or smaller) basis. Then we have $H=H_1\oplus{H_1}'$ (Thm 2.2.1.6),   $H_1'\cong \Z\langle x_1\rangle$. Then as $f(H)$ is free abelian with one generator, $H$ is free abelian as well.
+    \end{answer*} 
+    The very detail of last part proof is owed to Lang.
+    
+\item Suppose that $A$ is a finitely generated abelian group.
+\begin{itemize}[noitemsep,topsep=1pt]
+\item[i)] Show that if $A$ is divisible, then it is trivial.
+\item[ii)] If $p$ is a prime number, and $A$ is assumed $p$-divisible, what can you say about the structure of $A$?
+\end{itemize}
+    \begin{answer*}
+    i) group $A$ will for sure be $p$-divisible. but then all element in $A$ will have all prime number as factor, which forces all elements to be trivial.
+    
+    ii) group $A$ will for sure be $p$-divisible, and split on $p$-kernel. 
+    \end{answer*}
+
+
+\item Prove the following version of the short five lemma: given abelian groups $A,A',B,B',C,C'$ and homomorphisms $g: A \to A'$, $f: B \to B'$, and $h: C \to C'$ such that the following diagram commutes
+    \[
+    \xymatrix{
+    0 \ar[r] & A \ar[r]\ar[d]^{g} & \ar[r]\ar[d]^{f} B & \ar[r]\ar[d]^{h} C & 0 \\
+    0 \ar[r] & A' \ar[r] & B' \ar[r] & C'\ar[r] & 0,
+    }
+    \]
+    if $g$ and $h$ are bijective (resp. injective or surjective), then so is $f$.
+    \begin{answer*}
+    We begin proof by assuming $g$ and $h$ are injective, let $b \in B$ and suppose f(b)=0, we must show that b=0. By the commutativity we have $h(B\rightarrow C)(b)=(B'\rightarrow C')f(b)=(B'\rightarrow C')(0)=0$. This implies This implies $b\in Ker (B\rightarrow C)= Im(A\rightarrow B)$ . Now suppose $b= (A\rightarrow B)(a)$ with $a \in A$. again by commutativity $(A\rightarrow B)(a)=f(A\rightarrow B)(a)=f(b)=0$. By the exactness of bottom row at $A'$,$(A\rightarrow B)$ is a monomorphism thus $g(a)=0$. But $g$ is a monomorphism thus $a=0$ and $b=(A\rightarrow B)(a)=(A\rightarrow B)(0)=0$. Thus f is also a monomorphism.  
+
+    Then we assume $g$ and $h$ are surjective, let $b' \in B'$ and suppose $(B'\rightarrow C')(b')=0$, by exactness of top row at $C$, $(B'\rightarrow C')$ is an epimorphism. Thus $c=(B'\rightarrow C')(b)$ for some $b\in B$. Hence by the commutativity we have $(B'\rightarrow C')f(b)=h(B\rightarrow C)(b)=(B\rightarrow C)(c)=(B'\rightarrow C')(b')$. Thus we have $(B'\rightarrow C')(f(b)-b')=0$ and by exactness, $f(b)\in Ker (B'\rightarrow C')= Im(A'\rightarrow B')$. Now suppose for $a' \in A'$, $(A'\rightarrow B')(a')= f(b)-b'$. $g$ is an epimorphism, $a'=g(a)$ for some $a\in A$ then we have  $f(b-(A\rightarrow B)(a))= f(b)-f((A\rightarrow B)a))$,
+    again by commutativity $f(A\rightarrow B)(a)=(A'\rightarrow B')g(a)=f'(b)-b'$. By the exactness of bottom row at $C'$,$f(b-(A\rightarrow B)(a))=f(b)-f(A\rightarrow B)(a) = f(b)-(f(b)-b')=b'$ thus every $b'$ has a preimage in $B$ thus a epimorphism. 
+    
+    The bijectivity follows from previous assertion immediately.
+    \end{answer*}
+    The very detail of proof is owed to T. Hungerford.
+    
+    
+\item Show that $\Z[\frac{1}{p}]/\Z$ is a summand of $\Q/\Z$ and therefore divisible.
+    \begin{answer*}
+    I believe  $\Z[\frac{1}{p}]/\Z$ is a summand of $\Q/\Z$.
+    
+     We noticed that composition of $ (\Q/\Z \rightarrow \R/\Z\cong S^1) \circ (\Z[1/p]/\Z \rightarrow \Q/\Z)  $  provides a map from $\Z[1/p]/\Z$ to $S^1$. This explicit map is given by $x\rightarrow e^{\frac{2\pi ix}{n}}$. Now we restrict the map to $\Z/p^n\Z$, the explicit map is a homomorphism due to exponential, and further an isomorphism since it has logarithm as inverse. Thus we have $\Z[\frac{1}{p}]/\Z \cong \bigoplus_p \Z/p^n\Z \cong \varinjlim_n{\Z/p^n\Z}$. 
+     
+     The group is thus a summand for $\Q/\Z$ (as $\Z/p^n\Z \in \Q/\Z$, each is also divisible, by Proof 5), corollary 2.3.4.3 then asserts that the summand of divisible group is still divisible, $\Q/\Z$ is thus divisible. 
+     
+    \end{answer*}
+
+
+\item Show that if $A$ is an $p$-primary abelian group, then for any integer $m$ coprime to $p$, $A$ is $m$-divisible.  Conclude that any $p$-primary $p$-divisible abelian group is divisible.
+    \begin{answer*}
+    This is an application of Euclidean Algorithm: elements in $A$ must also be dividable by $m$, for  elements in $A$ are divisible by $m$ is equivalent to find solution for this linear congruence equation: $mx \equiv a \textrm{ modulo } p^n $, but this equation has solution iff $gcd(m,p^n)=1$, which is satisfied here due to $gcd(m,p)=1$. Thus any elements is also $m$-divisible. Thus all integer divides $A$ indeed. Thus any $p$-primary $p$-divisible abelian group is divisible.
+    \end{answer*} 
+
+
+\item An abelian group $P$ is called {\em projective} if for any epimorphism $f: A \to B$ and any morphism $g: P \to B$, there exists a morphism $\tilde{g}: P \to A$ such that $f \circ \tilde{g} = g$.  Show that any free abelian group is projective and conclude that any abelian group is a quotient of a projective abelian group.
+    \begin{answer*}
+    就 
+    \[
+    \xymatrix{
+     S \ar[r]^{i}\ar[d]^{\bar{\bar{g}}}\ar@{.>}[dr]^{\bar{g}} & \ar[d]^{g}\ar@{.>}[dl]^{\tilde{{\bar{\bar{g}}}}} F<S> & \\
+     A \ar[r]^{f} & B &,
+    }
+    \]
+    Consider the commutative diagram above, map $i$ is the inclusion map and the existence of $g$ is given. We can compose $g\circ i$ to obtain morphism $\bar{g}$.
+    Then we can at least build a function $\bar{\bar{g}}$, since $f$ is an epimorphism, sending $s\in S$ to $a=\bar{\bar{s}} \in A$ which $f(a)=\bar{s} \in B$， this will allow the commutativity of lower left triangle. Then with obtained $\bar{\bar{g}}, i$ the universal property of free abelian group clains the existence of our desired morphism $\bar{g}$ such that $f \circ \tilde{g} = g$. 
+    
+    Second assertion follows since any abelian group is a quotient of a free abelian group but the latter is identified as projective abelian group.
+    \end{answer*}
+    I saw an interesting proof using adjoint functor $Hom_{Mod}(-,-)$
+
+
+\item Prove that the category $\mathbf{Ab}$ of abelian groups is an abelian category.
+    \begin{answer*}
+    In example $A1.3.10$ we know that $\mathbf{Ab}$-category of abelian groups is an additive category, the additivity follows from: Trivial group is the zero object; we have defined direct sum and product of abelian group. 
+    
+    Remain to show: All morphisms have kernel and cokernel. Consider SES: 
+    \begin{center} $0 \longrightarrow A \longrightarrow G \longrightarrow H \longrightarrow A/(Im(G\rightarrow H)) \longrightarrow 0$\\ 
+    \end{center}
+    the existence of kernel (and cokernel): every group homomorphism has a (group theoretic) kernel and cokernel, the inclusion gives the category theoretic kernel and the map $H \rightarrow H/(Im(G\rightarrow H))$ guarantees the cokernels.
+    
+    Map $coim(G\rightarrow H)\rightarrow im(G\rightarrow H)$ (with guaranteed existence) is an isomorphism: $coim(G\rightarrow H)=ker(H \longrightarrow A/(Im(G\rightarrow H)))\textrm{ [by definition] }=im(G\rightarrow H) \textrm{ [notice }$ $\textrm{cokernel is: } A/(Im(G\rightarrow H)$, thus we are done.
+    
+    \end{answer*}
+
+
+\item For a fixed prime $p$ show that $\Z[\frac{1}{p}]/\Z$ is isomorphic to the group with presentation $\langle x_1,x_2,\ldots | px_1= 0, px_{i+1} = x_i \forall i \geq 1 \rangle$.  Show also that $\Z[\frac{1}{p}]/\Z$ is (abstractly, i.e., not by the quotient map) isomorphic to every quotient by a proper subgroup.
+    \begin{answer*}
+    Consider map $x_n \rightarrow \frac{1}{p^n}$, which sends $*^n\Z \rightarrow \Z\frac{1}{p}/\Z$. This map is an homomorphism since $\prod_i z_ix_i \rightarrow \prod_i {z_i/p_i} = \prod_i z_i \prod {1/p_i} \leftarrow \prod_i z_i \prod x_i$. The map is surjective since we can always find generator $x_n$ for each $1/p^n$, injective when considering the quotient by relation $px_1= 0, px_{i+1} = x_i \forall i \geq 1$. Since $x_1 \rightarrow 1/p$ and $p\frac{1}{p}=1$, likewise $x_n \rightarrow 1/p^n$ and $p^n\frac{1}{p^n}=1$ as well, the relations $R\in Ker(x_n \rightarrow \frac{1}{p^n})$, another direction observe $m/p^i=1=mx^i$ requires relations be satisfied directly. Thus map $x_n \rightarrow \frac{1}{p^n}$ is an isomorphism from $\langle x_1,x_2,\ldots | px_1= 0, px_{i+1} = x_i \forall i \geq 1 \rangle$ to $\Z[\frac{1}{p}]/\Z$.    $\Z\frac{1}{p}/\Z$ is a quotient of $*^n\Z$ by relations $\langle px_1= 0, px_{i+1} = x_i \forall i \geq 1 \rangle $
+    
+    The second part is clear as considering (as in $4$) $\Z[\frac{1}{p}]/\Z \cong \varinjlim_n{\Z/p^n\Z}$, the quotient of form $\Z/p^n\Z$ on right hand side does not impose an action, for right side is the direct limit, that is,  $\frac{\Z[\frac{1}{p}]/\Z}{\Z/p^n\Z} \cong \frac{\varinjlim_n{\Z/p^n\Z}}{{\Z/p^n\Z}}=\varinjlim_n{\Z/p^n\Z}=\Z[\frac{1}{p}]/\Z$.
+    \end{answer*} 
+    I owe some enlightenment to Remark 2.4.2.2.    
+
+
+\item Suppose that $G$ is a finite group and $p$ is a prime number dividing the order of $G$.  Consider the subset $X$ of $G^{\times p}$ consisting of elements $(g_1,\ldots,g_p)$ with $\prod_i g_i = e$.  Show that $X$ is stable under the cyclic permutation action of $\Z/p$ on $G^{\times p}$.  Compute the number of elements of $X$. According to the orbit stabilizer formula, what are the possible sizes of orbits in $X$?  Provide a description of the elements in orbits that are fixed by the cyclic permutation action on $X$.  Observe that $X$ is partitioned into orbits for the action. If $r$ is the number of fixed points of the $\Z/p$-action, then show using the partition of $X$ into orbits that $r$ is divisible by $p$.  Conclude by establishing Cauchy's theorem: hypotheses on $G$ as above, $G$ has an element of order $p$.
+    \begin{answer*}
+    Say $|G|=pm$,
+    The cyclic permutation action of $\Z/p$ on $G^{\times p}$ only permutes order within $(g_1,\ldots,g_p)$, thus $\prod_{\sigma(i)} g_\sigma(i)=g_{new}*g_{new}^{-1} = e = \prod_i g_i$. 
+    Element number of $X$ is divisible by $p$ since we have $pm$ choices for first element, the following argument in bracket claims that $|X|=|G|$. 
+    ( Thus $\Z/p\times X\rightarrow X$ has only one orbit, for $x\in X$, $|Orbit(x)|=|\Z/p|/|Stab(x)|$ thus $|Orbit(x)|$ can only be $1$ or $p$. The cyclic action fixes elements in form of $p$-tuple $(g,g,...,g)$, since the identification of X elements is coordinate-wise. )
+    Let $r=|X^G|$ be the number of fixed points, $X$ is partitioned into orbits, we have $|X^G|=|X| \textrm{ mod }p$. $0=|X| \textrm{ mod }p$, We thus know that $p||X^G|$. Now take $X=G$, we know that $|X|\geq p$ thus has non-trivial $g^p=e$: element $G$ has an element of order $p$.
+    \end{answer*} Note ( ) part is enough in $|X^G|=|X| \textrm{ mod }p$. 
+    
+    
+\item Suppose $G$ is a group and $X$ is a set with a $G$-action.  Define an action of $G$ on $G^{\times n} \times X$ by the formula
+    \[
+    g \cdot (g_1,\ldots,g_n,x) = (gg_1g^{-1},\ldots,gg_ng^{-1},g \cdot x).
+    \]
+    Show that the locus of points $I{(X)} \subset G^{\times n} \times X$ defined by the conditions $g_i \in G_x$, $[g_i,g_j] = e$ $\forall i,j \in \{1,\ldots,n\}$ is $G$-stable.  On the one hand $G^{\times n} \times X$ projects onto $X$ and it also projects on $G^{\times n}$.  If $S$ is a subset of $G$, write $X^S = \{ x \in X | g \cdot x = x, g \in S\}$ for the fixed-point locus of $S$.
+    \begin{itemize}[noitemsep,topsep=1pt]
+    \item[i)] Using $n = 1$, and assuming $G$ finite, prove Burnside's lemma: the number of $G$-orbits in $X$ is equal to the average number of fixed points, i.e., $\frac{1}{|G|} \sum_{g \in G} X^{g}$.  (Hint: count the subset of $G \times X$ in two different ways using preimages of the projections either to $X$ or to $G$).
+    \item[ii)] Using Burnside's lemma, prove the following result of C. Jordan: if a group $G$ acts transitively on a finite set $X$ with cardinality $\geq 2$, then there exists $g \in G$ that has no fixed points.  (Hint: if $n$ is the number of elements of $X$, what is the order of a stabilizer of $X$ in terms of the order of $G$?  Is the intersection of the stabilizer groups non-empty?  Bound the order of the union of the stabilizers.)
+    \item[ii)] Conclude that the number of pairs $\{(g_1,g_2) \in G | [g_1,g_2] = e\}$ is equal to $|G|$ times the number of conjugacy classes in $G$.
+    \item[iii)] What can you say about the number of commuting $n$-tuples in $G$?
+    \end{itemize}
+        \begin{answer*}
+     To general question: we immediately see that $I(X)$ is G-stable since we pick $g_i $ from commutative set, that is $gg_ig^{-1}=gg^{-1}g_i=g_i$. 
+     
+     i) The set $I(X)$ we proved is stable under $G$-action. On $G^{\times 1}$ the action is conjugation so class equation gives $\sum_{x \in X} G_x=|I(X)|=\sum_{g \in G} X^{g}$ and we also notice that $\sum_{x \in X} |G_x|=\sum_{x \in X} |G|/|Orbit(x)|=|G|\sum_{x \in X} 1/|Orbit(x)|=|G||\textrm{# }orbit| $ since for number of elements in same orbit multiply with $1/|Orbit(x)|$ is one and will count for one orbit. Thus we proved "not" Burnside Lemma.
+     
+     ii) Burnside Lemma gives that $|G|=\sum_{g\in G} X^g$, suppose all elements fix some $x\in X$, we notice $X^e \geq 2$, then we have $|G|=\sum_{g\in G} X^g > |G|$. 
+      
+     iii) We see $X=\{(g_1,g_2) \in G | [g_1,g_2] = e\}$, then $g*(g_1,g_2)=(gg_1g^{-1},gg_2g^{-1})$, while $gg_1g^{-1}gg_2g^{-1}=gg_1g_2g^{-1}=gg_2g_1g^{-1}=gg_2g^{-1},gg_1g^{-1}$, that is,$ [gg_1g^{-1},gg_2g^{-1}] = e\}$, the converse calculation shows $X$ is exactly the fixed-point locus by all $g$. This eventually translates to number of $G$-conjugating orbits times $|G|$ is number of $G$-fixed points.
+     
+     iv) the number is equal to $|G|$ times the number of conjugacy classes in $G$.
+    \end{answer*}
+    
+
+\item Suppose $G$ is a finite group, $H$ is a normal subgroup of prime index, and $x \in H$ satisfies $C_H(x) \subset C_G(x)$. If $y \in H$ is conjugate to $x \in G$, then $y$ is conjugate to $x \in H$.
+    \begin{answer*}
+    Since $x\in H \trianglelefteq G$ then x conjugate is in $H$.
+    \end{answer*} I do not think problem is correctly stated.
+
+
+\item Show that the symmetric group $S_n$ has the presentation
+    \[
+    \langle \sigma_1,\ldots,\sigma_{n-1} | \sigma_i^2 = (\sigma_i \sigma_j)^2 = (\sigma_i \sigma_{i+1})^3 = 1; j \neq i\pm 1 \rangle
+    \]
+    \begin{answer*}
+    Notice that when $ j\neq i\pm 1$,  $\sigma_i\sigma_j=\sigma_j\sigma_i$, thus $\sigma_i\sigma_j\sigma_i\sigma_j=\sigma_i\sigma_j\sigma_j\sigma_i=1$, 
+    $\sigma_i\sigma_{i+1}\sigma_i\sigma_{i+1}\sigma_i\sigma_{i+1}=\sigma_{i+1}\sigma_{i}\sigma_{i+1}\sigma_{i+1}\sigma_i\sigma_{i+1}=\sigma_{i+1}(\sigma_{i}(\sigma_{i+1}\sigma_{i+1})\sigma_i)\sigma_{i+1}=1$, so we have proved that this relation is equivalent to the Proposition 3.2.2.2. Thus  $S_n=\langle \sigma_1,\ldots,\sigma_{n-1} | \sigma_i^2 = (\sigma_i \sigma_j)^2 = (\sigma_i \sigma_{i+1})^3 = 1; j \neq i\pm 1 \rangle $
+    \end{answer*}
+    
+    
+\end{enumerate}
+\end{document}

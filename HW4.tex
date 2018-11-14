@@ -1,0 +1,220 @@
+\documentclass[11pt,leqno]{article}
+\usepackage{amsmath, amscd, amsthm, amssymb, graphics, xypic, mathrsfs,setspace,fancyhdr,times}
+\usepackage[pagebackref=true]{hyperref}
+\hypersetup{backref}
+
+\setlength{\textwidth}{6.0in}             % Alter margins
+\setlength{\textheight}{8.25in}
+\setlength{\topmargin}{-0.125in}
+\setlength{\oddsidemargin}{0.25in}
+\setlength{\evensidemargin}{0.25in}
+
+%\include{commands}
+
+\newcommand{\setof}[1]{\{ #1 \}}
+\newcommand{\tensor}{\otimes}
+\newcommand{\colim}{\operatorname{colim}}
+\newcommand{\Spec}{\operatorname{Spec}}
+\newcommand{\isomto}{{\stackrel{\sim}{\;\longrightarrow\;}}}
+\newcommand{\isomt}{{\stackrel{{\scriptscriptstyle{\sim}}}{\;\rightarrow\;}}}
+\newcommand{\smallsim}{{\scriptscriptstyle{\sim}}}
+
+\renewcommand{\O}{{\mathcal O}}
+\renewcommand{\hom}{\operatorname{Hom}}
+\newcommand{\Xa}{{\mathcal{X}_{\underline{a}}}}
+\newcommand{\real}{{\mathbb R}}
+\newcommand{\cplx}{{\mathbb C}}
+\newcommand{\Q}{{\mathbb Q}}
+\newcommand{\Z}{{\mathbb Z}}
+\newcommand{\F}{{\mathbb F}}
+\newcommand{\aone}{{\mathbb A}^1}
+\newcommand{\pone}{{\mathbb P}^1}
+\newcommand{\Stilde}{{\tilde{{\mathcal S}}}}
+
+\newcommand{\ga}{{{\mathbb G}_{a}}}
+\newcommand{\gm}{{{\mathbb G}_{m}}}
+\newcommand{\et}{\text{\'et}}
+\newcommand{\ho}[1]{{\mathcal H}({#1})}
+\newcommand{\hop}[1]{{\mathcal H}_{\bullet}({#1})}
+\newcommand{\dmeff}{{\mathbf{DM}}^{eff}_{k,-}}
+\newcommand{\CH}{{\widetilde{CH}}}
+\renewcommand{\deg}{\operatorname{deg}}
+\newcommand{\tdeg}{\widetilde{\deg}}
+\newcommand{\Op}{\operatorname{Op}}
+
+\newcommand{\Shv}{{\mathcal Shv}}
+\newcommand{\Sm}{{\mathcal Sm}}
+\newcommand{\Cor}{{\mathcal Cor}}
+\newcommand{\Spc}{{\mathcal Spc}}
+\newcommand{\Mod}{{\mathcal Mod}}
+\newcommand{\Ab}{{\mathcal Ab}}
+\newcommand{\K}{{{\mathbf K}}}
+\renewcommand{\H}{{{\mathbf H}}}
+\newcommand{\Alg}{{\mathbf{Alg}}}
+\newcommand{\sym}{{\operatorname{Sym}}}
+\newcommand{\<}[1]{{\langle}#1 {\rangle}}
+\newcommand{\simpspc}{\Delta^{\circ}\Spc}
+\newcommand{\limdir}{\underrightarrow {\operatorname{\mathstrut lim}}}
+\newcommand{\hsnis}{{\mathcal H}_s((\Sm_k)_{Nis})}
+\newcommand{\hspnis}{{\mathcal H}_{s,\bullet}^{Nis}(k)}
+\newcommand{\hspet}{{\mathcal H}_{s,\bullet}^{\et}(k)}
+\newcommand{\hsptau}{{\mathcal H}_{s,\bullet}^{\tau}(k)}
+\newcommand{\hset}{{\mathcal H}_s^{\et}(k)}
+\newcommand{\hstau}{{\mathcal H}_s^{\tau}(k)}
+\newcommand{\het}[1]{{\mathcal H}^{\et}(#1)}
+\newcommand{\hpet}[1]{{\mathcal H}^{\et}_{\bullet}(#1)}
+\newcommand{\dkset}{{\mathfrak D}_k-{\mathcal Set}}
+\newcommand{\F}{{\mathcal F}}
+\newcommand{\fkset}{{\mathcal F}_k-{\mathcal Set}}
+\newcommand{\fkrset}{{\mathcal F}_k^r-{\mathcal Set}}
+
+\newcommand{\simpnis}{{\Delta}^{\circ}\Shv_{Nis}({\mathcal Sm}_k)}
+\newcommand{\simpmod}{{\Delta}^{\circ}\Mod}
+\newcommand{\simpet}{{\Delta}^{\circ}\Shv_{\text{\'et}}({\mathcal Sm}_k)}
+\newcommand{\simptau}{{\Delta}^{\circ}\Shv_{\tau}({\mathcal Sm}_k)}
+
+\newcommand{\comment}[1]{\marginpar{\begin{tiny}{#1}\end{tiny}}}
+
+\newcommand{\kbar}{{\overline{k}}}
+
+\newcounter{intro}
+\setcounter{intro}{1}
+
+%\renewcommand{\baselinestretch}{1.5}
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}[subsection]
+\newtheorem{scholium}[thm]{Scholium}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{claim}[thm]{Claim}
+\newtheorem{question}[thm]{Question}
+\newtheorem{problem}[thm]{Problem}
+\newtheorem{answer}[thm]{Answer}
+\newtheorem{conj}[thm]{Conjecture}
+\newtheorem*{thm*}{Theorem}
+\newtheorem*{problem*}{Problem}
+\newtheorem*{answer*}{Answer}
+
+\newtheorem{thmintro}{Theorem}
+\newtheorem{propintro}[thmintro]{Proposition}
+\newtheorem{problemintro}[thmintro]{Problem}
+\newtheorem{defnintro}[thmintro]{Definition}
+\newtheorem{scholiumintro}[thmintro]{Scholium}
+\newtheorem{lemintro}[thmintro]{Lemma}
+
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{Definition}
+\newtheorem{construction}[thm]{Construction}
+\newtheorem{notation}[thm]{Notation}
+
+\theoremstyle{remark}
+\newtheorem{rem}[thm]{Remark}
+\newtheorem{remintro}[thmintro]{Remark}
+\newtheorem{extension}[thm]{Extension}
+\newtheorem{ex}[thm]{Example}
+\newtheorem{entry}[thm]{}
+
+\numberwithin{equation}{section}
+
+\begin{document}
+\pagestyle{fancy}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+\fancyhead{}
+\fancyhead[LO,R]{\bfseries\footnotesize\thepage}
+\fancyhead[LE]{\bfseries\footnotesize\rightmark}
+\fancyhead[RO]{\bfseries\footnotesize\rightmark}
+\chead[]{}
+\cfoot[]{}
+\setlength{\headheight}{1cm}
+
+\author{Haosen Wu}
+\title{{\bf 510A HW4 Tempted Solutions}}
+\date{Nov. 11 2018}
+
+\maketitle
+%\addtocounter{section}{1}
+\begin{enumerate}
+\item Suppose $F := {\mathbb F}_p$ is a finite field of order $p$.  Consider the extension $E := {\mathbb F}_{p^n}/{\mathbb F}_p$.  In this problem, we will compute this Galois group (check that the extension is Galois).
+    \begin{itemize}
+    \item Show that the map $x \mapsto x^p$ is a field isomorphism fixing ${\mathbb F}_p$ pointwise; we will write $Fr_p$ for the corresponding element of $Gal(E/F)$.
+    \item Determine the order of $Gal(E/F)$.
+    \item Show that $Fr_p$ has order at least $n$ in $Gal(E/F)$ and is a cyclic generator of $Gal(E/F)$.
+    \item Conclude that the subfields of ${\mathbb F}_{p^n}$ have order $p^d$ where $d | n$ and there is $1$ such subgroup for each such $d$.
+    \end{itemize}
+    
+    \begin{answer*}
+    \smallskip
+    Define $\sigma:= x \rightarrow x^p$.
+    
+    (All finite field extensions are Galois) The extension is Galois, followed from normality and separability. Enough to show that from  $E=\F_p[x]/(x^{p^n}-x)$. This polynomial has no repeated roots: formal derivative of $\delta(x^{p^n}-x)=-1$ reveals that; Equivalently to say the polynomial splits is that any $y\in \F_p$, $y\in ker(ev(x^{p^n}-x))$, henceforth revoking $\F_{p^n}^*$ is cyclic thus $y^{p^n-1}=1$. then $y^{p^n}-y=y-y=0$. Above satisfies the  normality and separability.
+    
+        \begin{itemize} 
+        
+            \item [i)] It being a homomorphism follows from freshmen's dream: $(x+y)^p=x^p+y^p$. The kernel is trivial since only $0$ has its power $0$. Surjectivity follows from that mapping is between finite underlying sets.
+            
+            Consider $x^p=x^{p-1}x$, we know that $\F_p^*$ is cyclic thus for $x\in \F_p$, $x^p=id_Fx=x$. We thus proved $Fr_p$ is an $\F_p$-automorphism.
+            
+            \item [ii)] $Gal(E/F)=Aut_F E=[E:F]$, therefore the order is the $n$, as
+            we know that $\F_{p^n}/\F_{p}=\bigoplus_n {\F_p}$ with $n$-copies. 
+            
+            (If assume iii), $Gal(E/F)$ is proved to be cyclic generated with element order at least n, then $Gal(E/F)=n$)
+            
+            \item [iii)]  
+            
+            We have showed $\F_p \subset \F_{p^n}^{\langle \sigma \rangle}$, and the element fixed by $\sigma$ has to satisfy $x^p=x$, that we have $p$ solutions, thus $\F_p = \F_{p^n}^{\langle \sigma \rangle}$.  Since $Fr_p$ has order $n$ and $Gal(E/F)=n$, it can only be the case $Fr_p$ generates the group and thus cyclic.
+            
+            \item [iv)] As subfield $\F_{p^d}$ satisfy $[\F_{p^n}:\F_{p^d}][\F_{p^d}:\F_{p}]=[\F_{p^n}:\F_{p}]$ thus $d|n$. The extension is Galois thus the second claim follows (FToG): each such $d$-subfield enjoys a corresponding subgroup. 
+            
+        \end{itemize}
+    \end{answer*}
+    
+    
+    
+    
+\item Suppose $F := \cplx((t))$, i.e., the field of formal power series in $1$ variable $t$ over $\cplx$.  For every integer $n \geq 1$, let $\cplx((t^{1/n}))$ be the field of formal power series in $t^{1/n}$.  Show that $\cplx((t^{1/n}))/\cplx((t))$ is a Galois extension.  If $\zeta_n$ is a primitive $n$-th root of unity, show that sending $t^{1/n} \mapsto \zeta_n t^{1/n}$ defines a cyclic generator of $Gal(\cplx((t^{1/n}))/\cplx((t)))$. (The field $\cplx((t))$ is some-times called a quasi-finite field for this reason).
+    \begin{answer*}
+        \begin{itemize}
+*            \item [i)] $\cplx((t^{1/n}))/\cplx((t))$ is Galois: 
+            We try to argue the extension is 
+            
+            
+            
+        \end{itemize}
+    \end{answer*}
+    
+    
+    
+
+\item Suppose $F$ is a field and consider the field $F(x_1,\ldots,x_n)$, i.e., the field of rational functions in $n$ variables over $F$.  There is an action of the symmetric group $S_n$ on $F(x_1,\ldots,x_n)$ by means of the formula
+    \[
+    \sigma(f(x_1,\ldots,x_n)) = f(x_{\sigma(1)},\ldots,x_{\sigma(n)}).
+    \]
+    A rational function $f \in K(x_1,\ldots,x_n)$ is called {\em symmetric} if $\sigma f = f$ for every $\sigma \in S_n$.  Observe that constant rational functions are symmetric.
+    \begin{itemize}
+    \item[i)] Define the functions $e_i$ by the formulas:
+    \[
+    e_j(x_1,\ldots,x_n) = \sum_{1 \leq i_1 \leq i_2 \leq \cdots \leq i_j \leq n} x_{i_1} x_{i_2} \cdots x_{i_j}.
+    \]
+    Show that $e_i$ are symmetric rational functions; they will be called elementary symmetric functions.
+    \item[ii)] Show that the map $S_n \to Aut_F(F(x_1,\ldots,x_n))$ sending $\sigma$ to $\{ f \mapsto \sigma f \}$ defines a homomorphism.  Let $E = F(x_1,\ldots,x_n)^{S_n}$, which is a subfield of $F(x_1,\ldots,x_n)$ containing $F$.  Show that $F(x_1,\ldots,x_n)/E$ is Galois extension with Galois group $S_n$.
+    \item[iii)] Show that if $G$ is an arbitrary finite group, then there *exists* a Galois extension with Galois group isomorphic to $G$ (hint: embed $G$ in $S_n$).
+    \end{itemize}
+
+    \begin{answer*}
+    \phantomsection
+        \begin{itemize}
+            \item [i)] 
+            $$ e_j(x_1,\ldots,x_n) = \sum_{1 \leq i_1 \leq i_2 \leq \cdots \leq i_j \leq n} x_{i_1} x_{i_2} \cdots x_{i_j} $$ was acted by $\sigma_n$, then $$ \sigma(e_j(x_1,\ldots,x_n)) = \sum_{1 \leq i_1 \leq i_2 \leq \cdots \leq i_j \leq n} x_{\sigma(i_1)} x_{\sigma(i_2)} \cdots x_{\sigma(i_j)} $$ So right hand side indeed ranges over all footnotes in \{1,2,...,i\}, then we realize that the application of $\sigma_i$ will isomorphically act on the sub-polynomials, i.e., an $i$-th cycle induces an isomorphism on the $i$-th cycle subgroup in $S_n$ due to the cyclic. Therefore the polynomial has no change.
+            
+            \item [ii)] For it to be a homomorphism, we want to show $\{f\rightarrow  \sigma_1\sigma_2(f) \}= \{f\rightarrow \sigma_1 \circ \sigma_2(f) \}  $ bababa. We also notice that $f$ here is simply index tuple which cycles act on, then the last assertion follows from composition of cycles is their product. j One criterion to say $F(x_1,\ldots,x_n)/E$ is Galois is that $F(x_1,\ldots,x_n)^{Aut(F(x_1,\ldots,x_n)/E)}$ is $E=F(x_1,\ldots,x_n)^{S_n}$, this is immediately to say $Gal(F()/E)=Aut_{F^{S_n}}F=S_n$. The elements being fixed under   
+            
+            \item [iii)] Embedding $G$ to $S_n$ through Cayley map $\rho:G\rightarrow S_n$ such that $\rho(G)$ is a subgroup of $S_n$;  We now by ii) have $F(x_1,\ldots,x_n)/E$ Galois extension with Galois group $S_n$, now FToG gives an intermediate field extension of Galois (sub)group  $\rho(G)$ with $F(x_1,\ldots,x_n) \supset L \supset E$. Now we only need to take  $F(x_1,\ldots,x_n) / L$ to be the desired Galois extension.    
+            
+        \end{itemize}
+    \end{answer*}
+
+
+\end{enumerate}
+
+\end{document}

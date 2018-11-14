@@ -1,0 +1,345 @@
+\documentclass[11pt,leqno]{article}
+\usepackage{amsmath, amscd, amsthm, amssymb, graphics, xypic, mathrsfs,setspace,fancyhdr,times}
+\usepackage[pagebackref=true]{hyperref}
+\hypersetup{backref}
+
+\setlength{\textwidth}{6.0in}             % Alter margins
+\setlength{\textheight}{8.25in}
+\setlength{\topmargin}{-0.125in}
+\setlength{\oddsidemargin}{0.25in}
+\setlength{\evensidemargin}{0.25in}
+
+%\include{commands}
+
+\newcommand{\setof}[1]{\{ #1 \}}
+\newcommand{\tensor}{\otimes}
+\newcommand{\colim}{\operatorname{colim}}
+\newcommand{\Spec}{\operatorname{Spec}}
+\newcommand{\isomto}{{\stackrel{\sim}{\;\longrightarrow\;}}}
+\newcommand{\isomt}{{\stackrel{{\scriptscriptstyle{\sim}}}{\;\rightarrow\;}}}
+\newcommand{\smallsim}{{\scriptscriptstyle{\sim}}}
+
+\renewcommand{\O}{{\mathcal O}}
+\renewcommand{\hom}{\operatorname{Hom}}
+\newcommand{\Xa}{{\mathcal{X}_{\underline{a}}}}
+\newcommand{\real}{{\mathbb R}}
+\newcommand{\cplx}{{\mathbb C}}
+\newcommand{\Q}{{\mathbb Q}}
+\newcommand{\Z}{{\mathbb Z}}
+\newcommand{\aone}{{\mathbb A}^1}
+\newcommand{\pone}{{\mathbb P}^1}
+\newcommand{\Stilde}{{\tilde{{\mathcal S}}}}
+
+\newcommand{\ga}{{{\mathbb G}_{a}}}
+\newcommand{\gm}{{{\mathbb G}_{m}}}
+\newcommand{\et}{\text{\'et}}
+\newcommand{\ho}[1]{{\mathcal H}({#1})}
+\newcommand{\hop}[1]{{\mathcal H}_{\bullet}({#1})}
+\newcommand{\dmeff}{{\mathbf{DM}}^{eff}_{k,-}}
+\newcommand{\CH}{{\widetilde{CH}}}
+\renewcommand{\deg}{\operatorname{deg}}
+\newcommand{\tdeg}{\widetilde{\deg}}
+\newcommand{\Op}{\operatorname{Op}}
+
+\newcommand{\Shv}{{\mathcal Shv}}
+\newcommand{\Sm}{{\mathcal Sm}}
+\newcommand{\Cor}{{\mathcal Cor}}
+\newcommand{\Spc}{{\mathcal Spc}}
+\newcommand{\Mod}{{\mathcal Mod}}
+\newcommand{\Ab}{{\mathcal Ab}}
+\newcommand{\K}{{{\mathbf K}}}
+\renewcommand{\H}{{{\mathbf H}}}
+\newcommand{\Alg}{{\mathbf{Alg}}}
+\newcommand{\sym}{{\operatorname{Sym}}}
+\newcommand{\<}[1]{{\langle}#1 {\rangle}}
+\newcommand{\simpspc}{\Delta^{\circ}\Spc}
+\newcommand{\limdir}{\underrightarrow {\operatorname{\mathstrut lim}}}
+\newcommand{\hsnis}{{\mathcal H}_s((\Sm_k)_{Nis})}
+\newcommand{\hspnis}{{\mathcal H}_{s,\bullet}^{Nis}(k)}
+\newcommand{\hspet}{{\mathcal H}_{s,\bullet}^{\et}(k)}
+\newcommand{\hsptau}{{\mathcal H}_{s,\bullet}^{\tau}(k)}
+\newcommand{\hset}{{\mathcal H}_s^{\et}(k)}
+\newcommand{\hstau}{{\mathcal H}_s^{\tau}(k)}
+\newcommand{\het}[1]{{\mathcal H}^{\et}(#1)}
+\newcommand{\hpet}[1]{{\mathcal H}^{\et}_{\bullet}(#1)}
+\newcommand{\dkset}{{\mathfrak D}_k-{\mathcal Set}}
+\newcommand{\F}{{\mathcal F}}
+\newcommand{\fkset}{{\mathcal F}_k-{\mathcal Set}}
+\newcommand{\fkrset}{{\mathcal F}_k^r-{\mathcal Set}}
+
+\newcommand{\simpnis}{{\Delta}^{\circ}\Shv_{Nis}({\mathcal Sm}_k)}
+\newcommand{\simpmod}{{\Delta}^{\circ}\Mod}
+\newcommand{\simpet}{{\Delta}^{\circ}\Shv_{\text{\'et}}({\mathcal Sm}_k)}
+\newcommand{\simptau}{{\Delta}^{\circ}\Shv_{\tau}({\mathcal Sm}_k)}
+
+\newcommand{\comment}[1]{\marginpar{\begin{tiny}{#1}\end{tiny}}}
+
+\newcommand{\kbar}{{\overline{k}}}
+
+\newcounter{intro}
+\setcounter{intro}{1}
+
+%\renewcommand{\baselinestretch}{1.5}
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}[subsection]
+\newtheorem{scholium}[thm]{Scholium}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{claim}[thm]{Claim}
+\newtheorem{question}[thm]{Question}
+\newtheorem{problem}[thm]{Problem}
+\newtheorem{answer}[thm]{Answer}
+\newtheorem{conj}[thm]{Conjecture}
+\newtheorem*{thm*}{Theorem}
+\newtheorem*{problem*}{Problem}
+\newtheorem*{answer*}{Answer}
+
+\newtheorem{thmintro}{Theorem}
+\newtheorem{propintro}[thmintro]{Proposition}
+\newtheorem{problemintro}[thmintro]{Problem}
+\newtheorem{defnintro}[thmintro]{Definition}
+\newtheorem{scholiumintro}[thmintro]{Scholium}
+\newtheorem{lemintro}[thmintro]{Lemma}
+
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{Definition}
+\newtheorem{construction}[thm]{Construction}
+\newtheorem{notation}[thm]{Notation}
+
+\theoremstyle{remark}
+\newtheorem{rem}[thm]{Remark}
+\newtheorem{remintro}[thmintro]{Remark}
+\newtheorem{extension}[thm]{Extension}
+\newtheorem{ex}[thm]{Example}
+\newtheorem{entry}[thm]{}
+
+\numberwithin{equation}{section}
+
+\begin{document}
+\pagestyle{fancy}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+\fancyhead{}
+\fancyhead[LO,R]{\bfseries\footnotesize\thepage}
+\fancyhead[LE]{\bfseries\footnotesize\rightmark}
+\fancyhead[RO]{\bfseries\footnotesize\rightmark}
+\chead[]{}
+\cfoot[]{}
+\setlength{\headheight}{1cm}
+
+
+\author{Haosen Wu}
+\title{{\bf 510a Homework 1 Tempted Solutions}}
+\date{08/30/18}
+
+
+\maketitle
+%\addtocounter{section}{1}
+\begin{enumerate}
+
+\item Show that if $G$ is a group such that $(ab)^i = a^ib^i$ for three consecutive integers $i$, then $G$ is abelian.
+    \begin{answer*}
+    "any 3" Take i={0,1,2}, notice i=2 provides us with $abab=a^2b^2$, left compose with $a^{-1}$ right compose with $b^{-1}$ we have desired property of $G$.\\
+    "exist 3" let $(ab)^i=a^ib^i=S$, then we have $abS=aSb$ for $i+1$, that implies $bS=Sb$; we have $ababS=a^2Sb^2=a^2(Sb)b=a^2bSb=a^2b(Sb)=a^2b^2S$, this reduces to $abab=a^2b^2$.
+    \end{answer*}
+
+    
+\item Show that a group object in the category of groups is an abelian group.
+\begin{itemize}
+\item[i)]  Suppose first that $A$ is a set equipped with two unital binary operations, $\circ$ and $\tensor$ such that for any $4$ elements $a,b,c,d \in A$ the following identity holds: $(a \tensor b) \circ (c \tensor d) = (a \circ c) \tensor (b \circ d)$.  Show that the units of the two operations coincide.  Using this observation, conclude that the two operations coincide.  Finally, show that $\circ$ (and $\tensor)$ is commutative and associative.
+    \begin{answer*}
+    To show the identity of two operation is the same, observe that taking $a=d=e_\otimes, b=c=e_\circ, \textrm{thus} (a_\otimes \otimes b_\circ) \circ (c_\circ \otimes d_\otimes) = (a_\otimes \circ c_\circ) \otimes (b_\circ \circ d_\otimes)$, simplify the equation gives $b_\circ \circ c_\circ = a_\otimes \otimes  d_\otimes \rightarrow e_\circ = e_\otimes $. We thus conclude that $e_\circ = e_\otimes$.
+    
+    Take $b=c=e_\otimes$, then $(a\otimes e_\otimes) \circ (e_\otimes \otimes d) = (a\circ e_\circ) \otimes (e_\circ \circ d)$, thus $a \circ d= a \otimes d $ for any $a,d \in A$. We conclude $\otimes$ defines the same function as $\circ$.
+    
+    Commutativity follows naturally by notice $bc=cb$ for any $b,c \in A$. Associativity follows by taking $b=e$ and notice $a(cd)=(ac)d$. 
+    \end{answer*}
+\item[ii)] Deduce the statement above.
+    \begin{answer*}
+    For any group object $G \in Grp$, we have binary product and by a) the terminal object ${e=e_\circ = e_\otimes}$, also from a) we have multiplication map $\times = \circ =\otimes$ such that diagram $1$ commutes, shows required associativity; then unit map induced by terminal object: $1: {e}\rightarrow G$, such that diagram $2$ commutes ($1$ choose the two-side identity); the inverse map $(-)^{-1}:G\rightarrow G$ makes diagram $3$ commutes. Now since all such group operations will coincide by a), the multiplication maps  commutes elements in $G$, and homomorphisms from the inverse map $(-)^{-1}$ give us $G$ is abelian.
+    Therefore the argument follows. 
+    
+    Number of diagrams corresponds to notes. 
+    \end{answer*}
+\end{itemize}
+
+
+\item Suppose $G$ is a group and $S \subset G$ is a subset.  Define the normalizer of $S$ in $G$ by
+    \[
+    N_G(S) := \{ g \in G | gSg^{-1} = S \}.
+    \]
+    \begin{itemize}
+    \item[i)]  Show that, for any subset $S \subset G$, the normalizer $N_G(S)$ is a subgroup of $G$.
+        \begin{answer*}
+        Aware of that $g_1g_2Sg_2^{-1}g_1^{-1}=S; g^{-1}Sg=S$, thus $N_G(S) \leq G$.  
+        \end{answer*}
+    \item[ii)] Give an example of a group $G$ and a subgroup $H$ where i) $N_G(H)$ is not a normal subgroup of $G$, and ii) $C_G(H)$ does not coincide with $N_G(H)$ (hint: think about subgroups of $2 \times 2$-matrices, say over the complex numbers).
+        \begin{answer*}
+         Consider $H=  <\begin{bmatrix}
+                            1 & x \\
+                            0 & 1 \\
+                        \end{bmatrix}>$ in $G=GL_2( \mathbb{C})$, by testing matrices clearly $N_G(H)={H}$, but $C_G(H)\supseteq<{aId}>$, where $a\in \mathbb{C}$, thus $N_G(H)\neq C_G(H)$. 
+        \end{answer*}
+    \item[iii)] If $H$ is a subgroup of $G$, show that assignment $g \mapsto c_g(-)$ (i.e., the function ``conjugation by $g$"), yields a function $N_G(H) \to Aut(H)$.  Show that this function is a homomorphism.
+        \begin{answer*}
+        $c_{g_1g_2}(-) = g_1g_2(-)g_2^{-1}g_1^{-1} = g_1(g_2(-)g_2^{-1})g_1^{-1} = c_{g_1}(c_{g_2}(-))$
+        \end{answer*}
+    \item[iv)] Show that $C_G(H) \trianglelefteq N_G(H)$, and that the induced map $N_G(H)/C_G(H) \to Aut(H)$ is a monomorphism.
+        \begin{answer*}
+        We claim that $ker(g \mapsto c_g(-))=C_G(H)$, then the normality follows. For $ker(g \mapsto c_g(-)) \supseteq C_G(H)$, consider $c \in C_G(H)$, $chc^{-1}=cc^{-1}h=h $ gives rise to identity in $Aut(H)$; for $ker(g \mapsto c_g(-)) \subseteq C_G(H)$, we have $chc^{-1}=h$ which automatically implies $c \in C_G(H)$. 
+        
+        Induced map is descended from the map in iii) thus automatically a homomorphism, the injectivity follows from $ker(N_G(H)/C_G(H) \to Aut(H))={e}=ker(g \mapsto c_g(-))/C_G(H)$.
+        \end{answer*}
+    \item[v)] If $Inn(G)$ denotes the group of inner automorphisms of $G$ (i.e., those automorphisms induced by conjugation by an element of $g$), then $Inn(G) \cong G/\Z(G)$ and $Inn(G) \trianglelefteq Aut(G)$.
+        \begin{answer*}
+        Combine definition from iii) and v) we know that $Inn(H)=im(g \mapsto c_g(-))\subseteq Aut(H)$, then we recognize $Z(G)= C_G(G)$ and $G=N_G(G)$, by definition of center and $N_G(H)$ contains $H$. Then First Isomorphism Theorem gives immediate isomorphism of $Inn(G)\cong G/\Z(G)$. 
+        
+        Next we shall show that for any $a \in Aut(G), i\in Inn(G)$ satisfies that $aia^{-1}\in Aut(G)$, then notice $i$ acts in such way $ai(-)i^{-1}a^{-1} \in Inn(G)$. Thus $Inn(G) \trianglelefteq Aut(G)$.  
+        \end{answer*}
+    \end{itemize}
+    
+    
+    \phantom \\
+    \phantom \\
+    \phantom \\
+    \phantom \\
+    \phantom \\
+    \phantom \\
+\item Miscellaneous examples: automorphism groups, centers
+    \begin{itemize}
+    \item[i)] If $G = \Z/2 \times \Z/2$, and $G' = Aut(S_3)$, show that $Aut(G) \cong Aut(G')$ and conclude that non-isomorphic groups can have isomorphic automorphism groups.
+        \begin{answer*}
+        Recognize $Aut(G') = Aut(Aut(S_3))=S_3$, $G=\Z/2 \times \Z/2 = {(0,0),(0,1),\\(1,0),(1,1)}$. All automorphisms map $(0,0)$ to $(0,0)$, thus we only have 6=3+2+1 possible automorphisms of $G \rightarrow G$. We then identify 6 morphisms as permutation action of $S^3$, or can verify that the multiplication table of these 6 morphisms matches with that of group $S_3$. 
+        \end{answer*}
+    \item[ii)] Show that $Aut(\Z) \cong \Z/2$.
+        \begin{answer*}
+        $\Z$ is abelian thus $Inn(\Z)$ is trivial, by 3.v) we know $Aut(\Z)=Out(\Z)$. The elements living in $Out(\Z)$ has to be homomorphism as well, that is, for any $a,b \in \Z$, $f(a+b)=f(a)+f(b)$. Then we can explicitly find such morphisms. We observe we have $f(n)=nf(1)$, which implies f can only be linear and pass origin, that is, $f_1=nx$ and $f_2=-nx$. $f_1$ acts on $\Z$ as identity and $f_2$ acts on $\Z$ as inversion thus has order 2. $f_1 \textrm{ and } f_2$ forms a group which we can verify the law and is isomorphic to $\Z/2$.    
+        \end{answer*}
+    \item[iii)] Give an example to show that if $\varphi: H \to G$ is a group homomorphism, then the composite $Z(H)\to H \to G$ need not have image in the center of $G$.
+        \begin{answer*}
+        Take $H=\Z/3,G=S_3$ and $\varphi : H \rightarrow G$ as homomorphism, also $Z(H)=H=\Z/3$, but $Z(G)={e}$. 
+        \end{answer*}
+    \end{itemize}
+    
+    
+\item Suppose $G$ is a group.  If $a,b \in G$, we set $[a,b] := aba^{-1}b^{-1}$; the element $[a,b]$ is called the commutator of $a$ and $b$.  The commutator subgroup of $G$, denoted $[G,G]$ is the subgroup of $G$ generated by all commutators.
+    \begin{itemize}
+    \item[i)] Show that $[G,G]$ is a normal subgroup of $G$.
+        \begin{answer*}
+        By realize $gaba^{-1}b^{-1}g^{-1}=gaba^{-1}b^{-1}g^{-1}(aba^{-1}b^{-1})^{-1}(aba^{-1}b^{-1})\in [G,G]$.
+        \end{answer*}
+    \item[ii)] Show that if $H$ is a normal subgroup of $G$, then the quotient $G/H$ is abelian if and only if $[G,G] \subset H$.
+        \begin{answer*}
+        Suppose $G/H$ is abelian, that is, for any $a,b \in G$, $aHbH=bHaH \iff (ba)^{-1}abH=H \iff a^{-1}b^{-1}abH=H \iff a^{-1}b^{-1}ab \in H$. This gives rise of $[G,G]\subset H$. 
+        
+        Conversely if $[G,G]\subset H$ and $H \trianglelefteq G$ then for any $a,b \in G$ we can reversely use previous argument to conclude that $aHbH=bHaH$, which gives rise of $G/H$ to be abelian. 
+        \end{answer*}
+    \end{itemize}
+    
+    \phantom \\
+    \phantom \\
+    \phantom \\
+    \phantom \\
+    \phantom \\
+    \phantom \\
+
+\item Suppose $F$ is a field.  Write $GL_n(F)$ for the group of invertible $n \times n$-matrices with coefficients in $F$, and $SL_n(F)$ for the subgroup of invertible $n \times n$-matrices having determinant equal to $1$.  If $M$ is a matrix, we write $(M)_{kl}$ for the $(k,l)$-entry of $M$.  Let $e_{ij}$ be the $n \times n$-matrix defined by
+    \[
+    (e_{ij})_{kl} = \begin{cases} 1 & \text{ if } k=i, l = j \\ 0 & \text{otherwise.} \end{cases}
+    \]
+    A matrix will be called {\em elementary} if it is of one of the following types: (i) $E_{ij}(\alpha) := Id_n + \alpha e_{ij}$ with $i \neq j$ (a shearing matrix), (ii) $E_{ii}(\alpha) := Id_n + (\alpha - 1)e_{ii}$ (a scaling matrix), or (iii) $P_{ij} := Id_n - e_{ii} - e_{jj} + e_{ij} + e_{ji}$ (a swapping matrix).
+    \begin{itemize}
+    \item[i)] Show that any $X \in GL_n(F)$ can be written as a product of elementary matrices (hint: Gaussian elimination).
+        \begin{answer*}
+        Any matrix in $GL_n(F)$ with finite steps of Gaussian Elimination can be $Id_n$, however the Gaussian Elimination corresponds to above three elementary matrices, that is, say matrix $X\in GL_n(F)$, $X=E_1...E_kI $. The argument follows.
+        \end{answer*}
+    
+    \item[ii)] Show that $Z(GL_n(F))$ consists of the subgroup of (non-zero) scalar multiples of the identity.
+        \begin{answer*}
+        Since all matrices $X\in GL_n(F)$, $X=E_1...E_kI$, we only need to consider about elementary matrices. Clearly $\alpha Id_n \in Z(GL_n(F))$, what is not so clear is why others are not. Those follow from the examples: not commute with permutation matrix by $P_{ij}A\neq AP_{ij}$,$i<j$, where  
+                        $A=\begin{bmatrix}
+                            x_{11} & x_{12} & x_{13} & \dots  & x_{1n} \\
+                            x_{21} & x_{22} & x_{23} & \dots  & x_{2n} \\
+                            \vdots & \vdots & \vdots & \ddots & \vdots \\
+                            x_{n1} & x_{n2} & x_{n3} & \dots  & x_{nn}
+                            \end{bmatrix};$
+                            
+                        $P_{ij}A=\begin{bmatrix}
+                            x_{11} & x_{12} & x_{13} & \dots  & x_{1n} \\
+                            x_{21} & x_{22} & x_{23} & \dots  & x_{2n} \\
+                            \vdots & \vdots & \vdots & \ddots & \vdots \\
+                            x_{j1} & x_{j2} & x_{j3} & \dots  & x_{jn} \\                            
+                            \vdots & \vdots & \vdots & \ddots & \vdots \\
+                            x_{i1} & x_{i2} & x_{i3} & \dots  & x_{in} \\
+                            \vdots & \vdots & \vdots & \ddots & \vdots \\
+                            x_{n1} & x_{n2} & x_{n3} & \dots  & x_{nn}
+                            \end{bmatrix};$
+                            
+                        $AP_{ij}=\begin{bmatrix}
+                            x_{11} & x_{12} & x_{13} & \dots  & x_{1j} & \dots  & x_{1i} & \dots  & x_{1n} \\
+                            x_{21} & x_{22} & x_{23} & \dots  & x_{2j} & \dots  & x_{2i} & \dots  & x_{2n} \\
+                            \vdots & \vdots & \vdots & \ddots & \vdots  & \vdots  & \vdots  & \vdots  & \vdots \\
+                            x_{j1} & x_{j2} & x_{j3} & \dots  & x_{jj} & \dots  & x_{ji} & \dots  & x_{jn} \\                            
+                            \vdots & \vdots & \vdots & \ddots & \vdots  & \vdots  & \vdots  & \vdots  & \vdots \\
+                            x_{i1} & x_{i2} & x_{i3} & \dots  & x_{ij} & \dots  & x_{ii} & \dots  & x_{in} \\
+                            \vdots & \vdots & \vdots & \ddots & \vdots  & \vdots  & \vdots  & \vdots  & \vdots \\
+                            x_{n1} & x_{n2} & x_{n3} & \dots  & x_{nj} & \dots  & x_{n1} & \dots  & x_{nn}
+                            \end{bmatrix};  $\\
+        unless for $A$, $i$-th row equals to $j$-th row.\\
+        Not commute with shear matrix by $E_{ij}(\alpha)A\neq AE_{ij}(\alpha)$ as we can see the left multiplication adds $j$-th row to $i$-th row whereas right multiplication adds $i$-th column to $j$-th column, unless these operations acts the same, that is, for $A$, it is diagonal with identical entries. 
+        Scaling matrix is similar, with relaxation to diagonal matrices.\\ Therefore their intersection is $\alpha Id_n$, thus $\alpha Id_n \supset Z(GL_n(F))$, combine we derive that $\alpha Id_n = Z(GL_n(F))$. 
+        \end{answer*}
+    \item[iii)] Assume $n = 2$, show that $P_{12} = E_{12}(1)E_{21}(-1)E_{12}(1)E_{11}(-1)$.  Show that for any integer $n$ and any integers $(i,j)$ with $1 \leq i < j \leq n$, the matrix $P_{ij} \in GL_n(F)$ can be written as a product of shearing and scaling matrices.
+        \begin{answer*}
+        First identity is trivial. With observation to the example, in general we can explicitly construct $P_{ij}= E_{ij}(1)E_{ji}(-1)E_{ij}(1)E_{ii}(-1)$, so that $P_{ij} \in GL_n(F)$ is a product of shearing and scaling matrices. 
+        \end{answer*}
+    \item[iv)] Show that the following commutator identities hold:
+    \begin{itemize}
+    \item if $k \neq i$ and $k \neq j$, then $[E_{ij}(\alpha),E_{kk}(\beta)] = Id_n$,
+    \item $E_{ij}(\alpha)E_{ii}(\beta) = E_{ii}(\beta)E_{ij}(\alpha/\beta)$, and
+    \item $E_{ij}(\alpha)E_{jj}(\beta) = E_{jj}(\beta)E_{ij}(\alpha\beta)$.
+    \end{itemize}
+        \begin{answer*}  
+        Verification of the identities is trivial.
+        \end{answer*}
+    \item[v)] Combining the steps above, show that every element of $SL_n(F)$ can be written as a product of shearing matrices.  In particular, $SL_n(F)$ is generated by elementary matrices.
+        \begin{answer*}
+        Since shearing and permutation matrices have determinant $1$ thus elements in $SL_n(F)$ will not have scaling component, combine with the fact that $P_{ij} \in GL_n(F)$ can be written as a product of shearing and scaling matrices, we know elements in $SL_n(F)$ will only have shearing matrices component.     
+        \end{answer*}
+    \item[vi)] Show that if $i,j,l$ are integers lying in $[1,n]$ and if $i \neq l$ and $j \neq l$, then
+        \[
+        E_{ij}(\alpha) = [E_{il}(\alpha)E_{lj}(1)].
+        \]
+        Conclude that, if $n \geq 3$, then $SL_n(F) = [SL_n(F),SL_n(F)]$.
+        \begin{answer*}
+        Verifying of the identities is trivial. \\ "$\supseteq$" follows from that
+        $E_{ij}(\alpha)E_{kl}(\beta)E_{ij}(\alpha)^{-1}E_{kl}(\beta)^{-1} =Id_n$ \\
+        "$\subseteq$" follows from that what we just verified $E_{ij}(\alpha) = [E_{il}(\alpha),E_{lj}(1)]$
+        \end{answer*}
+    \item[vii)] If $n = 2$, and $\alpha \in F$ is non-zero and satisfies $\alpha^2 \neq 1$, show that
+        \[
+        [(E_{11}(\alpha)E_{22}(\alpha^{-1})),E_{12}(\beta)] = E_{12}((\alpha^2 - 1)\beta).
+        \]
+        Conclude that if $F \setminus 0$ has at least $3$ elements, then every element of $SL_2(F)$ can be written as a product of commutators, i.e., $SL_2(F) = [SL_2(F),SL_2(F)]$ in this situation.
+        \begin{answer*}
+        Verification of the identities is trivial. Realize that $F \setminus 0$ has at least $3$ elements means we can express every element of $F \setminus 0$ to $(\alpha^2 - 1)\beta$. The last equality we proved thus shows every element of $SL_2(F)$ can be written as a product of commutators.
+        \end{answer*}
+    \end{itemize}
+    
+    \phantom \\
+\item If $G$ and $G'$ are groups, a {\em coproduct} is a group $G \sqcup G'$ equipped with two homomorphisms $i_G: G \to G \oplus G'$ and $i_{G'}: G' \to G \oplus G'$ such that, given any group $H$, and a pair of homomorphisms $\varphi: G \to H$ and $\varphi': G \to H$, there is a unique homomorphism $f: G \sqcup G' \to H$ making the following diagram commute
+    \[
+    \xymatrix{
+    G \ar[r]^{i_G}\ar[dr]^{\varphi} & G \sqcup G' \ar[d]^{f}& \ar[l]_{i_{G'}} \ar[dl]_{\varphi'} G' \\
+    & H. &
+    }
+    \]
+    Show that the amalgamated sum $G \ast G'$ is a coproduct of $G$ and $G'$.
+        \begin{answer*}
+        $G=<S_G|R_G>$, $G'=<S_G'|R_G'>$, $G\ast G' = <S_G'\sqcup S_G'|S_G\sqcup R_G'>$, we have $i_{G},i_{G'}$ as inclusions. We need to show the universal property of $G\ast G'$, we then explicitly gives this unique homomorphism $f: G \ast G' \to H$, defined by $f=\varphi \varphi'$, that is, assigning $h_1\dots h_k=g_1g'_1\dots g_kg'_k$ to $\varphi g_1 \varphi' g'_1\dots \varphi g_k\varphi' g'_k$. This is indeed a homomorphism since pick $\omega_1 , \omega_2\in G\ast G'$ which $\omega_1=g_1g'_1\dots g_kg'_{k}$, $\omega_2=g_lg'_l\dots g_tg'_t$,  $f(\omega_1\omega_2)=f(g_1g'_1\dots g_kg'_{k} g_lg'_l\dots g_tg'_t)= \varphi g_1 \varphi' g'_1 \dots \varphi g_k\varphi' g'_k\varphi g_l \varphi' g'_l\dots \varphi g_t\varphi' g'_t =\\f(g_1g'_1\dots g_kg'_{k}) f(g_lg'_l\dots g_tg'_t) = f(\omega_1)f(\omega_2)$,
+        Even if we have cancellation on words $\omega_1,\omega_2$ we note such homomorphism still holds. Therefore we obtained universal property of $\ast$, give it rise to coproduct construction.
+        \end{answer*}
+\end{enumerate}
+
+Some matrix calculation sketch On attached paper.
+\end{document}
