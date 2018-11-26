@@ -1,0 +1,245 @@
+\documentclass[11pt,leqno]{article}
+\usepackage{amsmath, amscd, amsthm, amssymb, graphics, xypic, mathrsfs,setspace,fancyhdr,times}
+\usepackage[pagebackref=true]{hyperref}
+\hypersetup{backref}
+
+\setlength{\textwidth}{6.0in}             % Alter margins
+\setlength{\textheight}{8.25in}
+\setlength{\topmargin}{-0.125in}
+\setlength{\oddsidemargin}{0.25in}
+\setlength{\evensidemargin}{0.25in}
+
+%\include{commands}
+
+\newcommand{\setof}[1]{\{ #1 \}}
+\newcommand{\tensor}{\otimes}
+\newcommand{\colim}{\operatorname{colim}}
+\newcommand{\Spec}{\operatorname{Spec}}
+\newcommand{\isomto}{{\stackrel{\sim}{\;\longrightarrow\;}}}
+\newcommand{\isomt}{{\stackrel{{\scriptscriptstyle{\sim}}}{\;\rightarrow\;}}}
+\newcommand{\smallsim}{{\scriptscriptstyle{\sim}}}
+
+\renewcommand{\O}{{\mathcal O}}
+\renewcommand{\hom}{\operatorname{Hom}}
+\newcommand{\Xa}{{\mathcal{X}_{\underline{a}}}}
+\newcommand{\real}{{\mathbb R}}
+\newcommand{\cplx}{{\mathbb C}}
+\newcommand{\Q}{{\mathbb Q}}
+\newcommand{\Z}{{\mathbb Z}}
+\newcommand{\F}{{\mathbb F}}
+\newcommand{\qua}{{\mathbb H}}
+\newcommand{\aone}{{\mathbb A}^1}
+\newcommand{\pone}{{\mathbb P}^1}
+\newcommand{\Stilde}{{\tilde{{\mathcal S}}}}
+
+\newcommand{\ga}{{{\mathbb G}_{a}}}
+\newcommand{\gm}{{{\mathbb G}_{m}}}
+\newcommand{\et}{\text{\'et}}
+\newcommand{\ho}[1]{{\mathcal H}({#1})}
+\newcommand{\hop}[1]{{\mathcal H}_{\bullet}({#1})}
+\newcommand{\dmeff}{{\mathbf{DM}}^{eff}_{k,-}}
+\newcommand{\CH}{{\widetilde{CH}}}
+\renewcommand{\deg}{\operatorname{deg}}
+\newcommand{\tdeg}{\widetilde{\deg}}
+\newcommand{\Op}{\operatorname{Op}}
+
+\newcommand{\Shv}{{\mathcal Shv}}
+\newcommand{\Sm}{{\mathcal Sm}}
+\newcommand{\Cor}{{\mathcal Cor}}
+\newcommand{\Spc}{{\mathcal Spc}}
+\newcommand{\Mod}{{\mathcal Mod}}
+\newcommand{\Ab}{{\mathcal Ab}}
+\newcommand{\K}{{{\mathbf K}}}
+\renewcommand{\H}{{{\mathbf H}}}
+\newcommand{\Alg}{{\mathbf{Alg}}}
+\newcommand{\sym}{{\operatorname{Sym}}}
+\newcommand{\<}[1]{{\langle}#1 {\rangle}}
+\newcommand{\simpspc}{\Delta^{\circ}\Spc}
+\newcommand{\limdir}{\underrightarrow {\operatorname{\mathstrut lim}}}
+\newcommand{\hsnis}{{\mathcal H}_s((\Sm_k)_{Nis})}
+\newcommand{\hspnis}{{\mathcal H}_{s,\bullet}^{Nis}(k)}
+\newcommand{\hspet}{{\mathcal H}_{s,\bullet}^{\et}(k)}
+\newcommand{\hsptau}{{\mathcal H}_{s,\bullet}^{\tau}(k)}
+\newcommand{\hset}{{\mathcal H}_s^{\et}(k)}
+\newcommand{\hstau}{{\mathcal H}_s^{\tau}(k)}
+\newcommand{\het}[1]{{\mathcal H}^{\et}(#1)}
+\newcommand{\hpet}[1]{{\mathcal H}^{\et}_{\bullet}(#1)}
+\newcommand{\dkset}{{\mathfrak D}_k-{\mathcal Set}}
+\newcommand{\F}{{\mathcal F}}
+\newcommand{\fkset}{{\mathcal F}_k-{\mathcal Set}}
+\newcommand{\fkrset}{{\mathcal F}_k^r-{\mathcal Set}}
+
+\newcommand{\simpnis}{{\Delta}^{\circ}\Shv_{Nis}({\mathcal Sm}_k)}
+\newcommand{\simpmod}{{\Delta}^{\circ}\Mod}
+\newcommand{\simpet}{{\Delta}^{\circ}\Shv_{\text{\'et}}({\mathcal Sm}_k)}
+\newcommand{\simptau}{{\Delta}^{\circ}\Shv_{\tau}({\mathcal Sm}_k)}
+
+\newcommand{\comment}[1]{\marginpar{\begin{tiny}{#1}\end{tiny}}}
+
+\newcommand{\kbar}{{\overline{k}}}
+
+\newcounter{intro}
+\setcounter{intro}{1}
+
+%\renewcommand{\baselinestretch}{1.5}
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}[subsection]
+\newtheorem{scholium}[thm]{Scholium}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{claim}[thm]{Claim}
+\newtheorem{question}[thm]{Question}
+\newtheorem{problem}[thm]{Problem}
+\newtheorem{answer}[thm]{Answer}
+\newtheorem{conj}[thm]{Conjecture}
+\newtheorem*{thm*}{Theorem}
+\newtheorem*{problem*}{Problem}
+\newtheorem*{answer*}{Answer}
+
+\newtheorem{thmintro}{Theorem}
+\newtheorem{propintro}[thmintro]{Proposition}
+\newtheorem{problemintro}[thmintro]{Problem}
+\newtheorem{defnintro}[thmintro]{Definition}
+\newtheorem{scholiumintro}[thmintro]{Scholium}
+\newtheorem{lemintro}[thmintro]{Lemma}
+
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{Definition}
+\newtheorem{construction}[thm]{Construction}
+\newtheorem{notation}[thm]{Notation}
+
+\theoremstyle{remark}
+\newtheorem{rem}[thm]{Remark}
+\newtheorem{remintro}[thmintro]{Remark}
+\newtheorem{extension}[thm]{Extension}
+\newtheorem{ex}[thm]{Example}
+\newtheorem{entry}[thm]{}
+
+\numberwithin{equation}{section}
+
+\begin{document}
+\pagestyle{fancy}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+\fancyhead{}
+\fancyhead[LO,R]{\bfseries\footnotesize\thepage}
+\fancyhead[LE]{\bfseries\footnotesize\rightmark}
+\fancyhead[RO]{\bfseries\footnotesize\rightmark}
+\chead[]{}
+\cfoot[]{}
+\setlength{\headheight}{1cm}
+
+\author{Haosen Wu}
+\title{{\bf 510A HW5 Tempted Solutions}}
+\date{Nov. 20 2018}
+
+\maketitle
+%\addtocounter{section}{1}
+\begin{enumerate}
+
+\item Show that if $E_1$ and $E_2$ are finite Galois extensions of a field $F$, then construct an isomorphism from $Gal(E_1E_2/F)$ to the subgroup of $Gal(E_1/F) \times Gal(E_2/F)$ consisting of automorphisms $(\sigma_1,\sigma_2)$ such that $\sigma_1 |_{E_1 \cap E_2} = \sigma_2|_{E_1 \cap E_2}$. 
+
+\begin{answer*}*
+
+    We have such Galois group since the extension $E_1E_2$ is a composition. We then identify the morphism from $Gal(E_1E_2/F)$ to $Gal(E_1/F) \times Gal(E_2/F)$ as $\sigma \rightarrow (\sigma |_{E_1}, \sigma |_{E_2})=(\sigma_1, \sigma_2)$. 
+    
+    Such is a homomorphism: we need only to consider verifying homomorphism on each one component since the latter morphism exists as direct sum. Pick $\sigma_1, \sigma_2 \in Gal(E_1E_2/F)$, then $\sigma_1\sigma_2 |_{E_i}(\alpha)=\sigma_1\sigma_2 {}(\alpha)=\sigma_1(\sigma_2 {}(\alpha))=\sigma_1 |_{E_i}(\sigma_2 |_{E_i}(\alpha))=\sigma_1 |_{E_i}\circ \sigma_2 |_{E_i}(\alpha)$, as this holds clearly component-wise. 
+    
+    The morphism is injective: suppose the preimage of $(Id,Id)$ is not $Id$ of $E_1E_2$, then $Id$ must act non-trivially on either $E_1$ or $E_2$, thus contradiction. 
+    
+    The morphism is surjective: we have restricted codomain to which $\sigma_1 |_{E_1 \cap E_2} = \sigma_2|_{E_1 \cap E_2}$. Pick $(\sigma_1,\sigma_2)$, we can then always combine the action to  $\sigma \in Gal(E_1E_2/F)$ since their action agree on  $E_1 \cap E_2$. 
+\end{answer*}
+
+
+\item Suppose $F$ is a field having characteristic unequal to $2$, and $f \in F[x]$ is an irreducible, separable, monic polynomial of degree $3$.  If $f$ factors as $\prod_{i=1}^3 (x - \alpha_i)$ in a splitting field $L$ of $F$, then we define the discriminant of $f$, denoted $\Delta(f)$ by the formula $\Delta(f) := \prod_{i < j} (\alpha_i - \alpha_j)^2$.  Observe that $f$ is separable if and only if $\Delta(f)$ is non-zero.  Assuming $f$ is separable, we can define $\sqrt{\Delta(f)} = \prod_{i < j} (\alpha_i - \alpha_j) \in L$, but observe that this depends on the ordering of the roots.
+    \begin{itemize}
+    \item[i)] More generally, define $\sqrt{\Delta} \in F[x_1,\ldots,x_n]$ by the formula $\Delta = \prod_{i < j}(x_i - x_j)$.  There is an action of $S_n$ on $F[x_1,\ldots,x_n]$ by permuting the variables (as in the previous homework).  Show that if $\tau \in S_n$, then $\tau \cdot \sqrt{\Delta} = sgn(\tau) \sqrt{\Delta}$.  Using this observation, conclude that if $\sigma \in Gal(L/F)$ corresponds to $\tau \in S_3$, then $\sigma(\sqrt{\Delta(f)}) = sgn(\tau) \sqrt{\Delta(f)}$.
+    \item[ii)] Show that $Gal(L/F)$ is cyclic of order $3$ if \textit{and} only if $\sqrt{\Delta(f)} \in F$, i.e., the discriminant is a square in $F$.
+    \end{itemize}
+    
+    \begin{answer*}*
+    
+    i) $\alpha_i$ is precisely the adjoined elements in $F[x_1,\ldots,x_n]$, we also notice discriminant has elementary symmetrical form. $\tau\Delta = \tau\prod_{i < j}(x_i - x_j)=\prod_{i < j}(x_{\tau(i)} - x_{\tau(j)})$ Thus the odd permutation will leave a sign changed pair where as even permutation cancels change of sign.  The action of permutation is realized through: $\sigma(\sqrt{\Delta(f)})=\sigma \cdot \sqrt{\Delta} = sgn(\sigma) \sqrt{\Delta}$
+    
+    ii) $\Leftarrow$: Suppose $\sqrt{\Delta(f)}$ is fixed under $Gal(E/F)$, we know $Gal(E/F)$ has to be isomorphic to subgroup of $S_3$, what in the kernel of Galois action on adjoined roots are even permutations and identity. In $S_3$ they are precisely the image of $\Z/3$.
+    
+    $\Rightarrow$: the action of elements in $Gal(L/F)$ indeed fix $\sqrt{\Delta(f)}$, but what $Gal(L/F)$ fixes is precisely the ground field. 
+    \end{answer*}
+    
+    
+\item Compute the Galois group of $x^3 - x - 1$.  Can you figure out how to compute the discriminant of $x^3 + ax + b$ (hint: the discriminant is a symmetric function and coefficients of the polynomial are also symmetric functions in the roots)?
+
+\begin{answer*}*
+In general, some computation: Let $x^3+ax+b=(x-x_1)(x-x_2)(x-x_3)$ then 
+\[\begin{cases}
+x_1+x_2+x_3=0 &\\
+x_1x_2+x_2x_3+x_3x_1=p &\\
+x_1x_2x_3=q 
+\end{cases} \]  
+Also notice ${x_i}^3=-px_i-q$, $(x_1-x_2)^2=(x_1+x_2)^2-4x_1x_2$
+then we have $\sqrt{\Delta(f)}=-4p^3-27q^2$.
+
+Thus for $f(x)=x^3 - x - 1$ , $\sqrt{\Delta(f)}=4-27=-23$, thus the Galois group is $S_3$.
+\end{answer*}
+
+
+\item Show that the quaternion group $H$ of order $8$ cannot be realized as a Galois group of a polynomial of degree $4$ over $\Q$.  What is the smallest degree extension of $\Q$ for which the quaternion group can be realized as the Galois group of a polynomial.  Let $E = \Q(\sqrt{2},\sqrt{3})$ and set $K = E(\sqrt{(2 + \sqrt{2})(3 + \sqrt{3})})$.  First, show that $E/\Q$ is Galois with Galois group $\Z/2 \times \Z/2$.  Then, show that $\textit{K}/\Q$ is Galois with Galois group the quaternion group.
+
+\begin{answer*}* Call our adjoined element $\rho$
+
+Recall Fundamental Theorem of Galois, since $H\not \subset S_4$, it cannot be realized as Galois group of degree 4 polynomial. We know) it can be embedded in $S_8$, which tells us the minimal extension degree is 8. 
+
+We employ the theorem from Question 1, since $Q(\sqrt{2})\cap \Q(\sqrt{3})=\Q$, since each $\Q(sqrt())$ is degree 2 extension, we could conclude the Galois group $Gal(E/\Q)$ is isomorphic to $Gal(E_1/F)\times Gal(E_2/F) \cong \Z/2\times\Z/2$. 
+
+Extension $K/E$ is adjoining one square root element to $E$, therefore $[K:\Q]=[K:E][E:\Q]=2*4=8$. Minimal polynomial of $K/Q$ is $x^8-24x^6+144x^4-288x^2+144$, which is irreducible in $\Q$, thus no repeated roots (formal derivative $\delta(x^8-24x^6+144x^4-288x^2+144)=8x(x^6-18x^4+72x^2-72)$, long division shows no common factor) and splitting on $k$ (formal powers of $\sqrt{(2 + \sqrt{2})(3 + \sqrt{3})}$ are in $K/\Q$. Thus it is a Galois extension. \\
+
+\par
+Now $Gal(K/\Q)$ needs to be determined as the relation of permutations of roots: consider $\sigma \in Gal(K/\Q)$, which is 
+\begin{equation*}
+    \begin{cases}
+    \sigma(\sqrt{2})\rightarrow -\sqrt{2} &\\
+    \sigma(\sqrt{3})\rightarrow \sqrt{3} &
+    \end{cases}
+\end{equation*}
+Then computation shows: 
+$$\frac{\sqrt{(-\sqrt{2}+2)(\sqrt{3+3})}}{\sqrt{(\sqrt{2}+2)(\sqrt{3+3})}}
+=\frac{\sqrt{\frac{-\sqrt{2}+2}{\sqrt{2}+2}}}{\sqrt{\frac{(-\sqrt{2}+2)^2}{(-\sqrt{2}+2)(\sqrt{2}+2)}}}
+=\pm \frac{-\sqrt{2}+2}{\sqrt{2}}$$
+But $$(\pm \frac{-\sqrt{2}+2}{\sqrt{2}})^4=1$$
+Therefore we know that $\sigma$ is an element of order $4$ in the group of order $8$, similarly we can conclude that $\tau \in Gal(K/\Q)$,
+\begin{equation*}
+    \begin{cases}
+    \tau(\sqrt{2})\rightarrow \sqrt{2} &\\
+    \tau(\sqrt{3})\rightarrow -\sqrt{3} &
+    \end{cases}
+\end{equation*}
+is also an element of order $4$. Then the last calculation reveals their product $\sigma\tau$ is still order $4$. Also we have $$\sigma\tau\rho=-(-\sqrt{3}+3)(\sqrt{2}-1)/(\sqrt{6})\rho; \tau\sigma\rho=(-\sqrt{3}+3)(\sqrt{2}-1)/(\sqrt{6})\rho$$ Among non-abelian ordr $8$ groups, we can obtain In $D_8$, the only two order $4$ elements commute since they are rotations. Therefore we conclude the $Gal(K/\Q)$ we have can only be $\qua$.
+
+\end{answer*}
+
+
+\item Show that $x^5 - 2$ is irreducible over $\Q$, and then compute the Galois group of its splitting field over $\Q$.
+  
+\begin{answer*}*
+
+We use Eisenstein criterion: let $x'=x+2$, then $x'^5-2=x'^5+10x'^4+40x'^3+80x'^2+80x'+30$, we pick prime $p=5$, the criterion applies.
+
+Since the polynomial is irreducible, splitting field would be $\Q(2^{1/5},\xi)$. We can have two generators of automorphism:  sending 
+\begin{equation*}
+ \begin{cases}
+    \sigma(2^{1/5})\rightarrow2^{1/5}&\\
+    \tau(\xi)\rightarrow -\xi &
+\end{cases} \quad
+ \begin{cases}
+    \sigma(2^{1/5})\rightarrow \xi2^{1/5}&\\
+    \tau(\xi)\rightarrow \xi &
+\end{cases}     
+\end{equation*}
+
+
+The extension is Galois since our minimal (and separable) polynomial splits on the field. The Galois group is a homomorphic image in $S_5$; extension degree (i.e., Galois group order) is $ [\Q(2^{1/5},\xi):\Q(\xi)][\Q(\xi):\Q]=4*5=20$ and by the sending maps it contains $\Z/4$ and $\Z/5$ as subgroups. By Sylow Theorem III there only exists one normal $\Z/5 \trianglelefteq Gal(\Q(2^{1/5},\xi)/\Q)$. Now we have  possibility: The split extension has short exact sequence $$1\rightarrow \Z/5 \rightarrow Gal \rightarrow \Z/4 \rightarrow 1$$  The map is onto $\Z/4$ since it is realized as $Gal(\Q(\xi):\Q)$, the action is compatible since $Aut(\Z/5)\cong \Z/4$ and nontrivial since $\tau$ acts on $\sigma$ already. Thus the Galois group is $\Z/4 \ltimes_\varphi \Z/5$.
+\end{answer*}
+
+
+\end{enumerate}
+\end{document}

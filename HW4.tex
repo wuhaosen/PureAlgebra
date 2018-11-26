@@ -130,11 +130,12 @@
 
 \author{Haosen Wu}
 \title{{\bf 510A HW4 Tempted Solutions}}
-\date{Nov. 11 2018}
+\date{Nov. 14 2018}
 
 \maketitle
 %\addtocounter{section}{1}
 \begin{enumerate}
+
 \item Suppose $F := {\mathbb F}_p$ is a finite field of order $p$.  Consider the extension $E := {\mathbb F}_{p^n}/{\mathbb F}_p$.  In this problem, we will compute this Galois group (check that the extension is Galois).
     \begin{itemize}
     \item Show that the map $x \mapsto x^p$ is a field isomorphism fixing ${\mathbb F}_p$ pointwise; we will write $Fr_p$ for the corresponding element of $Gal(E/F)$.
@@ -147,7 +148,7 @@
     \smallskip
     Define $\sigma:= x \rightarrow x^p$.
     
-    (All finite field extensions are Galois) The extension is Galois, followed from normality and separability. Enough to show that from  $E=\F_p[x]/(x^{p^n}-x)$. This polynomial has no repeated roots: formal derivative of $\delta(x^{p^n}-x)=-1$ reveals that; Equivalently to say the polynomial splits is that any $y\in \F_p$, $y\in ker(ev(x^{p^n}-x))$, henceforth revoking $\F_{p^n}^*$ is cyclic thus $y^{p^n-1}=1$. then $y^{p^n}-y=y-y=0$. Above satisfies the  normality and separability.
+    Proof of claim (All finite field extensions are Galois): The extension is Galois, followed from normality and separability. Enough to show that from  $E=\F_p[x]/(x^{p^n}-x)$. This polynomial has no repeated roots: formal derivative of $\delta(x^{p^n}-x)=-1$ reveals that; Equivalently to say the polynomial splits is that any $y\in \F_p$, $y\in ker(ev(x^{p^n}-x))$, henceforth revoking $\F_{p^n}^*$ is cyclic thus $y^{p^n-1}=1$. then $y^{p^n}-y=y-y=0$. Above satisfies the  normality and separability.
     
         \begin{itemize} 
         
@@ -156,30 +157,27 @@
             Consider $x^p=x^{p-1}x$, we know that $\F_p^*$ is cyclic thus for $x\in \F_p$, $x^p=id_Fx=x$. We thus proved $Fr_p$ is an $\F_p$-automorphism.
             
             \item [ii)] $Gal(E/F)=Aut_F E=[E:F]$, therefore the order is the $n$, as
-            we know that $\F_{p^n}/\F_{p}=\bigoplus_n {\F_p}$ with $n$-copies. 
+            we know that $\F_{p^n}/\F_{p}=\bigoplus_n {\F_p}$ with $n$-copies (from notes). 
             
-            (If assume iii), $Gal(E/F)$ is proved to be cyclic generated with element order at least n, then $Gal(E/F)=n$)
+            (If assume iii), $Gal(E/F)$ is proved to be cyclic generated with element order at least n, then $Gal(E/F)=n$
             
             \item [iii)]  
             
-            We have showed $\F_p \subset \F_{p^n}^{\langle \sigma \rangle}$, and the element fixed by $\sigma$ has to satisfy $x^p=x$, that we have $p$ solutions, thus $\F_p = \F_{p^n}^{\langle \sigma \rangle}$.  Since $Fr_p$ has order $n$ and $Gal(E/F)=n$, it can only be the case $Fr_p$ generates the group and thus cyclic.
+            We have showed $\F_p \subset \F_{p^n}^{\langle \sigma \rangle}$, and the element fixed by $\sigma$ has to satisfy $x^p=x$, that we have $p$ solutions, thus $\F_p = \F_{p^n}^{\langle \sigma \rangle}$; that is equivalent to $Fr_p$ has order $n$.  Since $Fr_p$ has order $n$ and $Gal(E/F)=n$, it can only be the case $Fr_p$ generates the group and thus our $Gal(E/F)$ is cyclic.
             
-            \item [iv)] As subfield $\F_{p^d}$ satisfy $[\F_{p^n}:\F_{p^d}][\F_{p^d}:\F_{p}]=[\F_{p^n}:\F_{p}]$ thus $d|n$. The extension is Galois thus the second claim follows (FToG): each such $d$-subfield enjoys a corresponding subgroup. 
+            \item [iv)] As subfield $\F_{p^d}$ satisfy $[\F_{p^n}:\F_{p^d}][\F_{p^d}:\F_{p}]=[\F_{p^n}:\F_{p}]$ thus $d|n$. The extension is Galois thus the second claim follows (from FToG): each of such $p^d$-subfield enjoys a corresponding subgroup. Moreover, the uniqueness follows from that element $y\in F_{p^d}$ are exactly the solution to $x^{p^d}-x=0$, we know the equation has at most $p^d$ elements, that says $F_{p^d}\subset F_{p^n}$ has to be unique.
             
         \end{itemize}
     \end{answer*}
     
-    
-    
-    
+
 \item Suppose $F := \cplx((t))$, i.e., the field of formal power series in $1$ variable $t$ over $\cplx$.  For every integer $n \geq 1$, let $\cplx((t^{1/n}))$ be the field of formal power series in $t^{1/n}$.  Show that $\cplx((t^{1/n}))/\cplx((t))$ is a Galois extension.  If $\zeta_n$ is a primitive $n$-th root of unity, show that sending $t^{1/n} \mapsto \zeta_n t^{1/n}$ defines a cyclic generator of $Gal(\cplx((t^{1/n}))/\cplx((t)))$. (The field $\cplx((t))$ is some-times called a quasi-finite field for this reason).
     \begin{answer*}
-        \begin{itemize}
-*            \item [i)] $\cplx((t^{1/n}))/\cplx((t))$ is Galois: 
-            We try to argue the extension is 
+        \begin{itemize}*
+            \item [i)] $\cplx((t^{1/n}))/\cplx((t))$ is Galois: We try to argue the extension field splits on separable polynomial $p(x)=x^n-t=0$, the polynomial has $\delta p(x)=nx^{n-1}=0$ iff $x=0$, sharing no repeated roots, therefore $p(x)$ is separable. Now we know explicitly roots of $p(x)=x^n-t=0$ are $\zeta_n t^{1/n}$ where $\zeta_n$ is $n$-th primitive root. This polynomial therefore splits on $\cplx((t^{1/n}))$ since $t^{1/n}$ is adjoined and $\zeta_n$ is already in $\cplx$. We just need to show $\cplx((t^{1/n}))$ is the smallest such field: clearly $\cplx(t^{1/n})\subset \cplx((t^{1/n}))$, any formal power series $\sum c_i(t^{1/n})^i$ can be written as linear combination of element $\cplx(t^{1/n})$. Thus the beginning criterion of Galois extension illustrates our extension is Galois.
             
-            
-            
+            \item[ii)]  $|Gal(\cplx((t^{1/n}))/\cplx((t)))|=n$ since $x^n-t$ is minimal polynomial of $\zeta_nt^{1/n}$ and have degree $n$. We also notice that our automorphism is $(-)\rightarrow \zeta_n(-)$, but the power map as  $\zeta_n^k$ also induces automorphisms of $\cplx((t^{1/n}))/\cplx((t))$ since they are new roots of unity. Thus such element has order $n$, which says $Gal(\cplx((t^{1/n}))/\cplx((t)))$ is a cyclic $n$-th order group.
+             
         \end{itemize}
     \end{answer*}
     
@@ -205,9 +203,12 @@
     \phantomsection
         \begin{itemize}
             \item [i)] 
-            $$ e_j(x_1,\ldots,x_n) = \sum_{1 \leq i_1 \leq i_2 \leq \cdots \leq i_j \leq n} x_{i_1} x_{i_2} \cdots x_{i_j} $$ was acted by $\sigma_n$, then $$ \sigma(e_j(x_1,\ldots,x_n)) = \sum_{1 \leq i_1 \leq i_2 \leq \cdots \leq i_j \leq n} x_{\sigma(i_1)} x_{\sigma(i_2)} \cdots x_{\sigma(i_j)} $$ So right hand side indeed ranges over all footnotes in \{1,2,...,i\}, then we realize that the application of $\sigma_i$ will isomorphically act on the sub-polynomials, i.e., an $i$-th cycle induces an isomorphism on the $i$-th cycle subgroup in $S_n$ due to the cyclic. Therefore the polynomial has no change.
+            $$ e_j(x_1,\ldots,x_n) = \sum_{1 \leq i_1 \leq i_2 \leq \cdots \leq i_j \leq n} x_{i_1} x_{i_2} \cdots x_{i_j} $$ was acted by $\sigma_n$, then $$ \sigma(e_j(x_1,\ldots,x_n)) = \sum_{1 \leq i_1 \leq i_2 \leq \cdots \leq i_j \leq n} x_{\sigma(i_1)} x_{\sigma(i_2)} \cdots x_{\sigma(i_j)} $$ So right hand side indeed ranges over all footnotes in \{1,2,...,i\}, then we realize that the application of $\sigma_i$ will isomorphically act on the sub-polynomials, i.e., an $i$-th cycle induces an isomorphism on the $i$-th cycle subgroup in $S_n$ due to the cyclic. Therefore the polynomial has no change as sum.
             
-            \item [ii)] For it to be a homomorphism, we want to show $\{f\rightarrow  \sigma_1\sigma_2(f) \}= \{f\rightarrow \sigma_1 \circ \sigma_2(f) \}  $ bababa. We also notice that $f$ here is simply index tuple which cycles act on, then the last assertion follows from composition of cycles is their product. j One criterion to say $F(x_1,\ldots,x_n)/E$ is Galois is that $F(x_1,\ldots,x_n)^{Aut(F(x_1,\ldots,x_n)/E)}$ is $E=F(x_1,\ldots,x_n)^{S_n}$, this is immediately to say $Gal(F()/E)=Aut_{F^{S_n}}F=S_n$. The elements being fixed under   
+            \item [ii)] For it to be a homomorphism, we want to show $\{f\rightarrow  \sigma_1\sigma_2(f) \}= \{f\rightarrow \sigma_1 \circ \sigma_2(f) \}  $ bababa. We also notice that $f$ here is simply index tuple which cycles act on, then the last assertion follows from composition of cycles is their product.  One equivalent formulation to say $F(x_1,\ldots,x_n)/E$ is Galois is that $F(x_1,\ldots,x_n)^{Aut(F(x_1,\ldots,x_n)/E)}$ is $E=F(x_1,\ldots,x_n)^{S_n}$, this is immediately to say $Gal(F(x_1,\ldots,x_n))/E)=Aut_E F=S_n$. \\
+            
+            Previously we showed $S_n$ can be embedded into the automorphism group of $F(x_1,\ldots,x_n)/F$ as a subgroup, at the meanwhile we already have $F\subset E \subset F(x_1,\ldots,x_n)$, since $F(x_1,\ldots,x_n)/E$ is an intermediate extension of $F(x_1,\ldots,x_n)/F$, thus since the largest extension is finite, we therefore invoke Artin theorem to show extension $F(x_1,\ldots,x_n)/E$ is Galois and then by previous formulation we have $Gal(F(x_1,\ldots,x_n)/E)=S_n$
+               
             
             \item [iii)] Embedding $G$ to $S_n$ through Cayley map $\rho:G\rightarrow S_n$ such that $\rho(G)$ is a subgroup of $S_n$;  We now by ii) have $F(x_1,\ldots,x_n)/E$ Galois extension with Galois group $S_n$, now FToG gives an intermediate field extension of Galois (sub)group  $\rho(G)$ with $F(x_1,\ldots,x_n) \supset L \supset E$. Now we only need to take  $F(x_1,\ldots,x_n) / L$ to be the desired Galois extension.    
             
